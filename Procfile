@@ -1,0 +1,1 @@
+web: gunicorn sep_2024_hackathon.wsgi
