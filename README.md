@@ -120,6 +120,33 @@ The game's imagery will consist of modern piano graphics and simple notes. The U
 
 ### Wireframes
 
+The wireframes provide a visual representation of the different pages and features of the app. They serve as a blueprint for the design and layout of each page, helping to visualize the user interface and overall user experience. These wireframes were created using Balsamiq, a tool that enables quick and intuitive sketching of design ideas.
+
+<details><summary>Home / Login / Signup</summary>
+  <img src="docs/wireframes/login-signup.png" alt="Login/Signup Wireframe">
+</details>
+
+<details><summary>User Page</summary>
+  <img src="docs/wireframes/user-page.png" alt="User Page Wireframe">
+</details>
+
+<details><summary>Listen to the Tune</summary>
+  <img src="docs/wireframes/listen-to-the-tune.png" alt="Listen to Tune Wireframe">
+</details>
+
+<details><summary>Listen to the Tune 2</summary>
+  <img src="docs/wireframes/listen-to-the-tune2.png" alt="Listen to the Tune 2 Wireframe">
+</details>
+
+<details><summary>Leaderboard</summary>
+  <img src="docs/wireframes/leaderboard.png" alt="Leaderboard Wireframe">
+</details>
+
+<details><summary>Leaderboard 2</summary>
+  <img src="docs/wireframes/leaderboard-2.png" alt="Leaderboard 2 Wireframe">
+</details>
+
+
 #### Menu
 
 ![Main Menu](documentation/img/)
