@@ -10,3 +10,9 @@ for (index in keys) {
     document.getElementById(`${element.id}-audio`).play();
 	})
 }
+
+/* Gameplay stages */
+
+/* Leaderboard */
+
+/* Mobile */
