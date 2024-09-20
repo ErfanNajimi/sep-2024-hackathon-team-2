@@ -15,4 +15,24 @@ for (index in keys) {
 
 /* Leaderboard */
 
+// Function to filter/search player in the leaderboard
+function searchPlayer() {
+	// Get the seatch input
+	const searchValue = document.getElementById('search-bar').value.toLowerCase();
+
+	// Get all rows from the table body
+	const rows = document.querySelectorAll("#leaderboard tbody tr");
+
+	// Loop through the rows and hide those that don't match the search query
+	rows.forEach(row => {
+		const playerName = row.cells[1].textContent.toLowerCase();
+		if (playerName.includes(searchValue)) {
+			row.style.display = "";
+		} else {
+			row.style.display = "none";
+		}
+		
+	});
+}
+
 /* Mobile */
