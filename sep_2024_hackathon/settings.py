@@ -34,7 +34,8 @@ DEBUG = os.environ.get('DEBUG') == '1'
 ALLOWED_HOSTS = [
     ".codeinstitute-ide.net",
     ".herokuapp.com",
-    "8000-erfannajimi-sep2024hack-4pnxzmd1rgi.ws-eu116.gitpod.io"
+    "8000-erfannajimi-sep2024hack-4pnxzmd1rgi.ws-eu116.gitpod.io",
+    "8000-caleom-sep2024hackathon-hfotpnntoi6.ws-eu116.gitpod.io",
 ]
 
 

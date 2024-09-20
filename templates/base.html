@@ -20,6 +20,48 @@
     <!-- Main Content -->
     {% endblock content %}
 
+    <button id="mobile-nav" class="btn border border-2 position-absolute top-50 start-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-circle-chevron-right"></i>
+    </button>
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <ul id="piano">
+                    <li class="key">
+                        <div  class="black-key"></div>
+                        <a href="#" target="_blank">Home</a>
+                    </li>
+                    <li class="key">
+                        <div  class="black-key"></div>
+                        
+                    </li>
+                    <li class="key">
+                        <a href="#" target="_blank">Leaderboard</a>
+                    </li>
+                    <li class="key">
+                        <div  class="black-key"></div>
+                        
+                    </li>
+                    <li class="key">
+                        <div  class="black-key"></div>
+                        
+                    </li>
+                    <li class="key">
+                       
+                    </li>
+                    <li class="key">
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c70f25e1b1.js" crossorigin="anonymous"></script>
 
