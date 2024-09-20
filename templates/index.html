@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% load static %} {% block title %}Piano
+Game{%endblock title %} {% block content %}
+<header>
+  <div class="container border border-dark landing-page">
+    <div class="float-end">
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="text-center">
+      <h1>Piano Music Game</h1>
+      <button class="mt-4 rounded">Login</button>
+    </div>
+    <div class="text-center mt-4">
+      <h2 class="d-inline p-2">Are you New User?</h2>
+      <button class="d-inline p-2 rounded">Please Register Here</button>
+    </div>
+  </div>
+</header>
+
+{% endblock content %}

@@ -46,3 +46,12 @@
      color: white;
 }
 
+.landing-page{
+    margin: 0 auto;
+    padding: 25px; 
+    min-height: 300px;
+    max-width: 600px;
+    min-width: 400px;
+    margin-top: 10%;
+}
+
