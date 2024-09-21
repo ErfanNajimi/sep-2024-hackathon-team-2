@@ -15,99 +15,80 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg mb-5 bg-light">
+    <!-- Updated Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index.html' %}">
-            <img class="logo" src="{% static 'images/tunes-logo.png' %}" alt="logo" />
-          </a>
-          <div class="justify-content-center">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="{% url 'index.html' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="{% url 'piano.html' %}">Play!</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="{% url 'leaderboard.html' %}"
-                  >Leaderboard</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="float-end d-flex">
-            {% if user.is_authenticated %}
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="{% url 'account_logout' %}" id="" class="nav-link"
-                  >Log Out</a
-                >
-              </li>
-              {% else %}
-              <li class="nav-item list-unstyled">
-                <a href="{% url 'account_signup' %}" id="" class="nav-link mx-4"
-                  >Register</a
-                >
-              </li>
-              <li class="nav-item list-unstyled">
-                <a
-                  href="{% url 'account_login' %}"
-                  id=""
-                  class="nav-link text-decoration-none mx-4"
-                  >Login</a
-                >
-                </li>
-            </ul>
-            {% endif %}
-          </div>
-        </div>
-      </nav>
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img class="logo" src="{% static 'images/tunes-logo.png' %}" alt="logo" height="60" />
+                <span class="brand-text">Tunes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'piano' %}">
+                            <i class="fa-solid fa-music"></i> Play!
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'leaderboard' %}">
+                            <i class="fa-solid fa-list"></i> Leaderboard
+                        </a>
+                    </li>
 
-    {% block content %}
-    <!-- Main Content -->
-    {% endblock content %}
-
-    <button id="mobile-nav" class="btn border border-2 position-absolute top-50 start-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <i class="fa-solid fa-circle-chevron-right"></i>
-    </button>
-
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div>
-                <ul id="piano">
-                    <li class="key">
-                        <div  class="black-key"></div>
-                        <a href="#" target="_blank">Home</a>
-                    </li>
-                    <li class="key">
-                        <div  class="black-key"></div>
-                        
-                    </li>
-                    <li class="key">
-                        <a href="#" target="_blank">Leaderboard</a>
-                    </li>
-                    <li class="key">
-                        <div  class="black-key"></div>
-                        
-                    </li>
-                    <li class="key">
-                        <div  class="black-key"></div>
-                        
-                    </li>
-                    <li class="key">
-                       
-                    </li>
-                    <li class="key">
-                        
-                    </li>
+                    <!-- Authentication Links -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">
+                                <i class="fa-solid fa-door-closed"></i> Logout
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile/{{ user.pk }}">
+                                <img src="{{ user.profile_image.url }}" alt="Profile Image" class="rounded-circle" height="40">
+                                {{ user.username }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">
+                                <i class="fa-solid fa-user-plus"></i> Register
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">
+                                <i class="fa-solid fa-door-open"></i> Login
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
+    </nav>
+
+    {% block content %}
+    <!-- Main Content Area -->
+    <div class="container border border-dark landing-page">
+        <div class="float-end">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="text-center">
+            <h1>Piano Music Game</h1>
+            <button class="mt-4 btn btn-primary rounded">Login</button>
+        </div>
+        <div class="text-center mt-4">
+            <h2 class="d-inline p-2">Are you a New User?</h2>
+            <button class="d-inline p-2 btn btn-success rounded">Register Here</button>
+        </div>
     </div>
+    {% endblock content %}
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c70f25e1b1.js" crossorigin="anonymous"></script>
