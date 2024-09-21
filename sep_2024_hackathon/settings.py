@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     ".herokuapp.com",
     "8000-erfannajimi-sep2024hack-4pnxzmd1rgi.ws-eu116.gitpod.io",
     "8000-erfannajimi-sep2024hack-ulg7t5ogawp.ws-eu116.gitpod.io",
+    "8000-caleom-sep2024hackathon-hfotpnntoi6.ws-eu116.gitpod.io",
 ]
 
 

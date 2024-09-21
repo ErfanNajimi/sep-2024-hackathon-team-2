@@ -1,3 +1,5 @@
+
+
 .logo {
   width: 120px;  
   height: 120px; 
@@ -112,4 +114,59 @@ td {
 
 tr:hover {
   background-color: #f9f9f9;
+}
+
+/* sidebar piano */
+ ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+ul .key-nav {
+    position: relative;
+    width: 180px;
+    height: 60px;
+    border: 1px solid black;
+    border-right: none;
+    background: #fffff0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+} 
+
+ul .key-nav a {
+  width: 180px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul .key-nav a:hover {
+  text-decoration: underline;
+}
+
+ul .key-nav a:active {
+  background-color: black;
+}
+
+ul .key-nav a:visited {
+  background-color: #ccc;
+}
+
+ul .black-key-nav {
+    position: absolute;
+    top: 37.5px;
+    left: -1px;
+    width: 80px;
+    height: 45px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+    z-index: 999;
 }
