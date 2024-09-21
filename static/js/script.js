@@ -11,6 +11,11 @@ for (let index in keys) {
         document.getElementById(`${element.id}-audio`).load();
         document.getElementById(`${element.id}-audio`).play();
     });
+
+	// Colour change
+	const originalColour = element.style.backgroundColor;
+	element.style.backgroundColor = '#B10054';
+	setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
 }
 
 document.addEventListener('keydown', e => {
@@ -20,6 +25,12 @@ document.addEventListener('keydown', e => {
         console.log(note);
         document.getElementById(`${note}-audio`).load();
         document.getElementById(`${note}-audio`).play();
+
+		// Colour change
+		const element = document.getElementById(note);
+		const originalColour = element.style.backgroundColor;
+		element.style.backgroundColor = '#B10054';
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
     }
 });
 
