@@ -10,12 +10,13 @@ for (let index in keys) {
         console.log(`${element.id}`);
         document.getElementById(`${element.id}-audio`).load();
         document.getElementById(`${element.id}-audio`).play();
+
+		// Colour change
+		const originalColour = element.style.backgroundColor;
+		element.style.backgroundColor = '#B10054';
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
     });
 
-	// Colour change
-	const originalColour = element.style.backgroundColor;
-	element.style.backgroundColor = '#B10054';
-	setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
 }
 
 document.addEventListener('keydown', e => {
