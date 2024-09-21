@@ -301,29 +301,28 @@ tr:hover {
         border-right: 1px solid gray;
       }
     
-
     .black-key {
         height: 40px;
-        width: 15px;
+        width: 16px;
     }
     .one {
-      left: 22.5px;
+      left: 22px;
     }
   
     .two {
-      left: 52.5px;
+      left: 52px;
     }
   
     .three {
-      left: 112.5px;
+      left: 112px;
     }
   
     .four {
-      left: 142.5px;
+      left: 142px;
     }
   
     .five {
-      left: 172.5px;
+      left: 172px;
     }
   
     .leaderboard-container {
