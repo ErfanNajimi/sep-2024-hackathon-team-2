@@ -85,12 +85,19 @@ body {
 }
 
 .white-key {
-    background-color: whitesmoke;
-    display: inline-block;
-    height: 120px;
-    width: 60px;
-    z-index: 1;
-    border: 1px solid black;
+  background-color: #FFFFF0;
+  display: inline-block;
+  height: 120px;
+  width: 60px;
+  z-index: 1;
+  border: 1px solid gray;
+  border-radius: 4px;
+  border-right: none;
+}
+
+.white-key:last-child {
+  border-right: gray;
+
 }
 
 .black-key {

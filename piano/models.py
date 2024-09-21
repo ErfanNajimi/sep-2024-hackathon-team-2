@@ -11,3 +11,14 @@ class Tune(models.Model):
     
     def __str__(self):
         return f"{self.name}"
+
+class Score(models.Model):
+    player = models.ForeignKey(User, on_delete=Cmodels.CASCADE, name = "player")
+    score = models.IntegerField(default=0)
+
+    class Meta: 
+        ordering = ["score"]
+    
+    def __str__(self):
+        return f"{self.player}: {self.score} points"
+
