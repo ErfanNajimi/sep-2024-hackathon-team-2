@@ -1,4 +1,5 @@
-/* Piano */
+// PIANO
+
 
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
@@ -22,9 +23,9 @@ document.addEventListener('keydown', e => {
     }
 });
 
-/* Gameplay stages */
+// GAMEPLAY STAGES
 
-/* Leaderboard */
+// LEADERBOARD
 
 // Function to filter/search player in the leaderboard
 function searchPlayer() {
@@ -46,4 +47,4 @@ function searchPlayer() {
 	});
 }
 
-/* Mobile */
+// MOBILE
