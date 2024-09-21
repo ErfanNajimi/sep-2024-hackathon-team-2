@@ -20,7 +20,7 @@ Team Members:
 
 - [Kelsey](https://github.com/kelseyjaneadams)
 - [Mehtap](https://github.com/hisarciklilar)
-- [Erfan] ()
+- [Erfan] (https://github.com/ErfanNajimi)
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
 - [Liam](https://github.com/caleom)
@@ -252,7 +252,7 @@ Game functionality and performance tested across devices.
 
 - [Kelsey](https://github.com/kelseyjaneadams)
 - [Mehtap](https://github.com/hisarciklilar)
-- [Erfan] ()
+- [Erfan] (https://github.com/ErfanNajimi)
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
 - [Liam](https://github.com/caleom)
