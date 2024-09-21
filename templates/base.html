@@ -15,6 +15,53 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg mb-5 bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index.html' %}">
+            <img class="logo" src="{% static 'images/tunes-logo.png' %}" alt="logo" />
+          </a>
+          <div class="justify-content-center">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="{% url 'index.html' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="{% url 'piano.html' %}">Play!</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="{% url 'leaderboard.html' %}"
+                  >Leaderboard</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="float-end d-flex">
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="{% url 'account_logout' %}" id="" class="nav-link"
+                  >Log Out</a
+                >
+              </li>
+              {% else %}
+              <li class="nav-item list-unstyled">
+                <a href="{% url 'account_signup' %}" id="" class="nav-link mx-4"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item list-unstyled">
+                <a
+                  href="{% url 'account_login' %}"
+                  id=""
+                  class="nav-link text-decoration-none mx-4"
+                  >Login</a
+                >
+                </li>
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
 
     {% block content %}
     <!-- Main Content -->
