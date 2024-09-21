@@ -1,22 +1,27 @@
 // PIANO
 
-const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B' ];
 
-for (index in keys) {
-	let element = document.getElementById(`${keys[index]}`);
-	element.addEventListener('click', e => {
-		console.log(`${element.id}`);
+const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
 
-		// Colour
-		const originalColour = element.style.backgroundColor;
-		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
-
-		// Audio
-		document.getElementById(`${element.id}-audio`).load();
-		document.getElementById(`${element.id}-audio`).play();
-	})
+for (let index in keys) {
+    let element = document.getElementById(`${keys[index]}`);
+    element.addEventListener('click', e => {
+        console.log(`${element.id}`);
+        document.getElementById(`${element.id}-audio`).load();
+        document.getElementById(`${element.id}-audio`).play();
+    });
 }
+
+document.addEventListener('keydown', e => {
+    const keyIndex = keyBindings.indexOf(e.key.toUpperCase());
+    if (keyIndex !== -1) {
+        let note = keys[keyIndex];
+        console.log(note);
+        document.getElementById(`${note}-audio`).load();
+        document.getElementById(`${note}-audio`).play();
+    }
+});
 
 // GAMEPLAY STAGES
 
