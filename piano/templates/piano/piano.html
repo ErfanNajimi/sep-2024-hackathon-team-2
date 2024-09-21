@@ -1,21 +1,18 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
-<br>
-<div id = "keyboard">
-    <div class = "white-key" id="C"></div>
-    <div class = "black-key one" id="C#"></div>
-    <div class = "white-key" id="D"></div>
-    <div class = "black-key two" id="D#"></div>
-    <div class = "white-key" id="E"></div>
-    <div class = "white-key" id="F"></div>
-    <div class = "black-key three" id="F#"></div>
-    <div class = "white-key" id="G"></div>
-    <div class = "black-key four" id="G#"></div>
-    <div class = "white-key" id="A"></div>
-    <div class = "black-key five" id="A#"></div>
-    <div class = "white-key" id="B"></div>
+{% extends "base.html" %} {% load static %} {% block content %}
+<br />
+<div id="keyboard">
+  <div class="white-key" id="C"></div>
+  <div class="black-key one" id="C#"></div>
+  <div class="white-key" id="D"></div>
+  <div class="black-key two" id="D#"></div>
+  <div class="white-key" id="E"></div>
+  <div class="white-key" id="F"></div>
+  <div class="black-key three" id="F#"></div>
+  <div class="white-key" id="G"></div>
+  <div class="black-key four" id="G#"></div>
+  <div class="white-key" id="A"></div>
+  <div class="black-key five" id="A#"></div>
+  <div class="white-key" id="B"></div>
 </div>
 
 {{ tunes }}
@@ -32,5 +29,9 @@
 <audio id="F#-audio" src="{% static 'audio/F#.mp3' %}"></audio>
 <audio id="G-audio" src="{% static 'audio/G.mp3' %}"></audio>
 <audio id="G#-audio" src="{% static 'audio/G#.mp3' %}"></audio>
+
+<div class="text-center">
+  <button id="play-tune">Play Tune</button>
+</div>
 
 {% endblock %}
