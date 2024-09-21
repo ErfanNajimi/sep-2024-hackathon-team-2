@@ -221,7 +221,15 @@ tr:hover {
     .white-key {
         height: 90px;
         width: 45px;
-    }
+        border: 1px solid gray;
+        border-radius: 4px;
+        border-right: none;
+        box-shadow: 0 2px 5px gray;
+      }
+      
+      .white-key:last-child {
+        border-right: 1px solid gray;
+      }
 
     .black-key {
         height: 55px;
@@ -263,7 +271,16 @@ tr:hover {
     .white-key {
         height: 60px;
         width: 30px;
-    }
+        border: 1px solid gray;
+        border-radius: 3px;
+        border-right: none;
+        box-shadow: 0 1px 4px gray;
+      }
+      
+      .white-key:last-child {
+        border-right: 1px solid gray;
+      }
+    
 
     .black-key {
         height: 40px;
