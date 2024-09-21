@@ -1,19 +1,26 @@
-/* Piano */
+// PIANO
 
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B' ];
 
 for (index in keys) {
 	let element = document.getElementById(`${keys[index]}`);
 	element.addEventListener('click', e => {
-	console.log(`${element.id}`);
-    document.getElementById(`${element.id}-audio`).load();
-    document.getElementById(`${element.id}-audio`).play();
+		console.log(`${element.id}`);
+
+		// Colour
+		const originalColour = element.style.backgroundColor;
+		element.style.backgroundColor = '#B10054';
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+
+		// Audio
+		document.getElementById(`${element.id}-audio`).load();
+		document.getElementById(`${element.id}-audio`).play();
 	})
 }
 
-/* Gameplay stages */
+// GAMEPLAY STAGES
 
-/* Leaderboard */
+// LEADERBOARD
 
 // Function to filter/search player in the leaderboard
 function searchPlayer() {
@@ -35,4 +42,4 @@ function searchPlayer() {
 	});
 }
 
-/* Mobile */
+// MOBILE
