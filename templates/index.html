@@ -1,24 +1,20 @@
-{% extends "base.html" %} {% load static %} {% block title %}Piano
-Game{%endblock title %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
 
-  <div class="container border border-dark landing-page">
+{% block title %}Piano Game{% endblock title %}
+
+{% block content %}
+<div class="container border border-dark landing-page">
     <div class="float-end">
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="text-center">
-      <h1>Piano Music Game</h1>
-      <button class="mt-4 rounded">Login</button>
+        <h1>Piano Music Game</h1>
+        <a href="{% url 'account_login' %}" class="btn btn-primary mt-4 rounded">Login</a>
     </div>
     <div class="text-center mt-4">
-      <h2 class="d-inline p-2">Are you New User?</h2>
-      <button class="d-inline p-2 rounded">Please Register Here</button>
+        <h2 class="d-inline p-2">Are you a New User?</h2>
+        <a href="{% url 'account_signup' %}" class="btn btn-secondary d-inline p-2 rounded">Please Register Here</a>
     </div>
-  </div>
-  
-
+</div>
 {% endblock content %}
