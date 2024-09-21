@@ -21,7 +21,7 @@ Team Members:
 - [Erfan] ()
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
-- [Liam]()
+- [Liam](https://github.com/caleom)
 - [Jab] ()
 
 The goal is to provide users with a fun and interactive way to improve their musical skills, compete with others, and track their development through gamification.
@@ -253,7 +253,7 @@ Game functionality and performance tested across devices.
 - [Erfan] ()
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
-- [Liam]()
+- [Liam](https://github.com/caleom)
 - [Jab] ()
 
 ### Code Used
