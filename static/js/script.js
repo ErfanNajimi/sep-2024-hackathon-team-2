@@ -1,19 +1,76 @@
-/* Piano */
+// PIANO
 
-const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B' ];
 
-for (index in keys) {
-	let element = document.getElementById(`${keys[index]}`);
-	element.addEventListener('click', e => {
-	console.log(`${element.id}`);
-    document.getElementById(`${element.id}-audio`).load();
-    document.getElementById(`${element.id}-audio`).play();
-	})
+const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
+let computerTune = [];
+
+for (let index in keys) {
+    let element = document.getElementById(`${keys[index]}`);
+    element.addEventListener('click', e => {
+        console.log(`${element.id}`);
+        document.getElementById(`${element.id}-audio`).load();
+        document.getElementById(`${element.id}-audio`).play();
+
+		// Colour change
+		const originalColour = element.style.backgroundColor;
+		element.style.backgroundColor = '#B10054';
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+    });
+
 }
 
-/* Gameplay stages */
+document.addEventListener('keydown', e => {
+    const keyIndex = keyBindings.indexOf(e.key.toUpperCase());
+    if (keyIndex !== -1) {
+        let note = keys[keyIndex];
+        console.log(note);
+        document.getElementById(`${note}-audio`).load();
+        document.getElementById(`${note}-audio`).play();
 
-/* Leaderboard */
+		// Colour change
+		const element = document.getElementById(note);
+		const originalColour = element.style.backgroundColor;
+		element.style.backgroundColor = '#B10054';
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+    }
+});
+
+function playTune(tune) {
+    let index = 0;
+    function playNote() {
+        if (index < tune.length) {
+            let note = tune[index];
+            document.getElementById(`${note}-audio`).load();
+            document.getElementById(`${note}-audio`).play();
+            index++;
+            setTimeout(playNote, 1000); // Wait for 1 second before playing next note
+        }
+    }
+    playNote();
+}
+
+
+function generateTune(length = 5) {
+    computerTune = [];
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * keys.length);
+        computerTune.push(keys[randomIndex]);
+    }
+}
+
+
+
+
+document.getElementById('play-tune').addEventListener('click', () => {
+    generateTune();
+    console.log(computerTune);
+    playTune(computerTune);
+});
+
+// GAMEPLAY STAGES
+
+// LEADERBOARD
 
 // Function to filter/search player in the leaderboard
 function searchPlayer() {
@@ -35,4 +92,4 @@ function searchPlayer() {
 	});
 }
 
-/* Mobile */
+// MOBILE
