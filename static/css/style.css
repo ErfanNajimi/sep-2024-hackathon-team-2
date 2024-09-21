@@ -235,7 +235,27 @@ tr:hover {
         height: 55px;
         width: 22px;
     }
-
+    
+    .one {
+      left: 34px;
+    }
+  
+    .two {
+      left: 79px;
+    }
+  
+    .three {
+      left: 169px;
+    }
+  
+    .four {
+      left: 214px;
+    }
+  
+    .five {
+      left: 259px;
+    }
+  
     .leaderboard-container {
         width: 320px;
     }
@@ -286,7 +306,26 @@ tr:hover {
         height: 40px;
         width: 15px;
     }
-
+    .one {
+      left: 22.5px;
+    }
+  
+    .two {
+      left: 52.5px;
+    }
+  
+    .three {
+      left: 112.5px;
+    }
+  
+    .four {
+      left: 142.5px;
+    }
+  
+    .five {
+      left: 172.5px;
+    }
+  
     .leaderboard-container {
         width: 240px;
     }
