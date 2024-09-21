@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Tune(models.Model):
@@ -13,7 +14,7 @@ class Tune(models.Model):
         return f"{self.name}"
 
 class Score(models.Model):
-    player = models.ForeignKey(User, on_delete=Cmodels.CASCADE, name = "player")
+    player = models.ForeignKey(User, on_delete=models.CASCADE, name = "player")
     score = models.IntegerField(default=0)
 
     class Meta: 
