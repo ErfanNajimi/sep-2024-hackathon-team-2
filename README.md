@@ -1,14 +1,12 @@
 # sep-2024-hackathon-team-2
 
-# sep-2024-hackathon-team-2
-
 # Piano Music Game
 
 Proudly present our retro game: Piano Music Game
 
-![Am I responsive](/documentation/img/mockup.png)
+![Am I responsive](/static/images/mockup.png)
 
-[View Piano Music Game live link ](https://8000-erfannajimi-sep2024hack-vzxeqrnssjl.ws.codeinstitute-ide.net/)
+[View Piano Music Game live link ](https://sep-2024-hackathon-e6134e4b3383.herokuapp.com/)
 
 # Overview
 
@@ -20,11 +18,11 @@ Team Members:
 
 - [Kelsey](https://github.com/kelseyjaneadams)
 - [Mehtap](https://github.com/hisarciklilar)
-- [Erfan] (https://github.com/ErfanNajimi)
+- [Erfan](https://github.com/ErfanNajimi)
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
 - [Liam](https://github.com/caleom)
-- [Jab] ()
+- [Jab](https://github.com/Jab90)
 
 The goal is to provide users with a fun and interactive way to improve their musical skills, compete with others, and track their development through gamification.
 
@@ -125,59 +123,45 @@ The game's imagery will consist of modern piano graphics and simple notes. The U
 The wireframes provide a visual representation of the different pages and features of the app. They serve as a blueprint for the design and layout of each page, helping to visualize the user interface and overall user experience. These wireframes were created using Balsamiq, a tool that enables quick and intuitive sketching of design ideas.
 
 <details><summary>Home / Login / Signup</summary>
-  <img src="static/images/wireframes/login-signup.png" alt="Login/Signup Wireframe">
+  <img src="/static/images/wireframes/login-signup.png" alt="Login/Signup Wireframe">
 </details>
 
 <details><summary>User Page</summary>
-  <img src="static/wireframes/user-page.png" alt="User Page Wireframe">
+  <img src="/static/images/wireframes/user-page.png" alt="User Page Wireframe">
 </details>
 
 <details><summary>Listen to the Tune</summary>
-  <img src="static/wireframes/listen-to-the-tune.png" alt="Listen to Tune Wireframe">
+  <img src="/static/images/wireframes/listen to the Tune.png" alt="Listen to Tune Wireframe">
 </details>
 
 <details><summary>Listen to the Tune 2</summary>
-  <img src="static/wireframes/listen-to-the-tune2.png" alt="Listen to the Tune 2 Wireframe">
+  <img src="/static/images/wireframes/listen-to-the-tune.png" alt="Listen to the Tune 2 Wireframe">
 </details>
 
 <details><summary>Leaderboard</summary>
-  <img src="static/wireframes/leaderboard.png" alt="Leaderboard Wireframe">
+  <img src="/static/images/wireframes/leaderboard.png" alt="Leaderboard Wireframe">
 </details>
 
 <details><summary>Leaderboard 2</summary>
-  <img src="static/wireframes/leaderboard-2.png" alt="Leaderboard 2 Wireframe">
+  <img src="/static/images/wireframes/leaderboard2.png" alt="Leaderboard 2 Wireframe">
 </details>
-
-
-#### Menu
-
-![Main Menu](documentation/img/)
-
-#### Instructions
-
-![Instructions](documentation/img/)
-
-#### End Game
-
-![End Game](documentation/img/)
 
 
 ## Features
 
 ### General features
 
-  - Main Menu: Access the game, view instructions, or check the leaderboard.
-  - Game Interface: Listen to a short tune and replicate it using an online piano.
+  - THomepage: Access the game, view instructions, or check the leaderboard.
+  - Play: Play tunes and practice using an online piano.
   - Feedback System: Receive real-time feedback based on your input (correct/incorrect).
-  - Leaderboard: View the leaderboard with top scores globally.
+  - Leaderboard: View top scores globally.
   - User Profile: Track personal scores, earned badges, and progress.
 
 ### Future Implementations
 
-
-- More Instruments: Add additional instruments (drums, guitar) for variety.
-- Advanced Game Modes: Introduce levels of difficulty, such as "Expert Mode" with longer tunes.
-- Collaborative Play: Allow users to play tunes together or compete in real-time.
+- Enhanced Piano Features: Improve the piano experience with additional keys or sound variations.
+- Expanded Tune Library: Add more songs and tunes for players to practice.
+- Score Tracking: Implement detailed score analysis and progress tracking over time.
 
 ### Accessibility
 
@@ -186,7 +170,7 @@ The wireframes provide a visual representation of the different pages and featur
 
 ## Technologies Used
 
-HTML5, CSS, Javascript, Python, Django, 
+HTML5, CSS, Javascript, Python, Django 
 
 
 ### Languages Used
@@ -199,10 +183,12 @@ HTML5, CSS, Javascript, Python, Django,
 ### Frameworks, Libraries & Programs Used
 
 * [Balsamiq](https://www.balsamiq.com/wireframes/ "Balsamiq Wireframing Tool") was used to create the wireframes/sitemap for the site.
-* [Tone.js](https://tonejs.github.io/) wUsed for sound generation and piano key sounds.
+* [Tone.js](https://tonejs.github.io/) was used for sound generation and piano key sounds.
 * [Gitpod](https://gitpod.io/ "cloud based IDE") was used for development.
 * [Git](https://github.com/ "Version Control System") was used for developers to work on their own branch. Once approved changes would be merged into the main repository.
-* [FireBase](https://https://firebase.google.com/ "Database") was used for our database.
+* [Am I Risponsive](https://ui.dev/amiresponsive/ "") was used to check the responsiveness of the site across different device sizes.
+* [Tinypng](https://tinypng.com/ "") was used to compress images, optimizing them for faster loading times. 
+* [Doodle](https://doodle.com/ "" ) was used to schedule meetings and coordinate team collaboration.
 
 ## Deployment & Local Development
 
@@ -256,7 +242,7 @@ Game functionality and performance tested across devices.
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
 - [Liam](https://github.com/caleom)
-- [Jab] ()
+- [Jab](https://github.com/Jab90)
 
 ### Code Used
 
