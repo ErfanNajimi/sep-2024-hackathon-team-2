@@ -345,3 +345,64 @@ tr:hover {
         font-size: 12px;  /* Reduced link font size for small screens */
     }
 }
+
+/* Small devices in landscape form */
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    .logo {
+        width: 40px;  /* Further reduced size for small screens */
+        height: 40px;  /* Further reduced size for small screens */
+    }
+    nav {
+        padding: 0;
+        margin: 0;
+        max-height: fit-content;
+    }
+   
+    .NavBar {
+        padding: 0;
+    }
+
+    .landing-page {
+        max-width: 300px;
+        margin-top: 5px;  /* Adjusted for small screens */
+        padding: 5px;  /* Reduced padding */
+    }
+
+    /* Footer */
+    .footer-container {
+    border-top: 1px #D8B646 solid !important;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    }
+
+    .social-networks {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+
+    .social-networks i {
+    font-size: 100%;
+    padding: 0;
+    color: #0a0a0a;
+    transition: color 0.3s ease;
+    }
+
+    .social-networks i:hover {
+    color: #b10054;
+    }
+
+    .p.mt-3 {
+    margin:0;
+    padding: 0;
+    }
+
+    .footer-container {
+    margin:0;
+    padding: 0;
+    }
+}
