@@ -27,9 +27,6 @@
     <div class="col text-center">
       <button id="play-tune">Play Tune</button>
     </div>
-    <div class="col text-center">
-      <button id="submit">Submit</button>
-    </div>
     <div class="col" id="keyboard-container" >
       <div class="row">
         <div class="col text-center">
@@ -63,12 +60,14 @@
         <div class="white-key" id="B">B</div>
       </div>
     </div>
-    <div class="col">
-
+    <div class="col text-center">
+      <button id="submit">Submit</button>
     </div>
   </div>
 </div>
-{{ tunes }}
+{% for tune in tunes %}
+  {{ tune.note_progression|json_script:"tune" }}
+{% endfor %}
 
 <audio id="A-audio" src="{% static 'audio/A.mp3' %}"></audio>
 <audio id="A#-audio" src="{% static 'audio/A#.mp3' %}"></audio>
