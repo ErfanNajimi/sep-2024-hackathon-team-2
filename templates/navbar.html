@@ -32,6 +32,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'profile' user.pk %}">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-light d-flex align-items-center" href="{% url 'profile' user.pk %}">
                             <img src="{{ user.profile_image.url }}" alt="Profile Image" class="rounded-circle" height="30">
                             <span class="ms-2">{{ user.username }}</span>
