@@ -3,6 +3,7 @@
 
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
+let keysPlayed = [];
 // let computerTune = [];
 let clickCount = 0;
 
@@ -51,13 +52,14 @@ for (let index in keys) {
     let element = document.getElementById(`${keys[index]}`);
     element.addEventListener('click', e => {
         console.log(`${element.id}`);
+        keysPlayed.push(`${element.id}`);
         document.getElementById(`${element.id}-audio`).load();
         document.getElementById(`${element.id}-audio`).play();
 
 		// Colour change
 		const originalColour = element.style.backgroundColor;
 		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
     });
 
 }
@@ -74,7 +76,7 @@ document.addEventListener('keydown', e => {
 		const element = document.getElementById(note);
 		const originalColour = element.style.backgroundColor;
 		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
     }
 });
 
@@ -147,7 +149,53 @@ document.getElementById('play-tune').addEventListener('click', () => {
 //     playTune(computerTune);
 // });
 
-// GAMEPLAY STAGES
+// GAMEPLAY
+
+// Timer
+function timer(play, pause, reset, clock) {
+    let min = 0;
+    let sec = 55;
+    play.addEventListener('click', () => {
+        x = setInterval(function() {
+                let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
+                let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
+                clock.innerText = `${minDisplay}:${secDisplay}`;
+                if (sec < 59) {
+                    sec += 1; 
+                } else {
+                    sec = 0; 
+                    min += 1; 
+                };
+            }, 1000);  
+    });
+
+    pause.addEventListener('click', () => {
+        clearInterval(x);
+    });
+    
+    reset.addEventListener('click', () => {
+        clearInterval(x);
+        min = 0;
+        sec = 0;
+        let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
+        let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
+        clock.innerText = `${minDisplay}:${secDisplay}`;
+    });
+}
+
+
+timer(
+    document.getElementById('record'), 
+    document.getElementById('pause'), 
+    document.getElementById('reset'), 
+    document.getElementById('clock'),
+);
+
+// Tracker
+
+// function tracker(status) {
+
+// }
 
 // LEADERBOARD
 
