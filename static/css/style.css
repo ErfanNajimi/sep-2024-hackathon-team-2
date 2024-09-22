@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&family=Open+Sans:wght@300;500&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /* Global Styles */
 body {
@@ -78,6 +79,12 @@ body {
 }
 
 /* Piano */
+#keyboard-container {
+    background-color: black;
+    border-radius: 30px 30px 5px 5px;
+    padding-top: 20px;
+}
+
 #keyboard {
     display: flex;
     justify-content: center;
@@ -138,6 +145,57 @@ body {
 
 .five {
     left: 345px;
+}
+
+#clock {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    font-size: 200%;
+    background-color: grey;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#record,
+#pause,
+#reset {
+    font-size: 200%;
+    color: white;
+    background-color: black;
+}
+
+#record:hover,
+#pause:hover,
+#reset:hover {
+    color: #b10054;
+}
+
+.piano-btn-label {
+    margin-bottom: 0;
+    color: white;
+}
+
+/* Music Sheet */
+#music-sheet .row {
+    height: 100px;
+    width: 50vw;;
+    position: relative;
+    border-left: 5px solid black;
+    border-bottom: 2px solid black;
+}
+#music-sheet .col {
+    border-top: 2px solid black;
+}
+
+#note {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    position: absolute; 
+    left: 50px;
+    top: 100px;
 }
 
 /* Gameplay stages */

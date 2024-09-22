@@ -1,5 +1,15 @@
 {% extends "base.html" %} {% load static %} {% block content %}
-<br />
+<br>
+  <div class="container d-flex justify-content-center" id="music-sheet">
+    <div class="row flex-column">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div id="note"></div>
+    </div>
+  </div>
+<br>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -14,7 +24,30 @@
         </div>
       </div>
     </div>
-    <div class="col" >
+    <div class="col text-center">
+      <button id="play-tune">Play Tune</button>
+    </div>
+    <div class="col text-center">
+      <button id="submit">Submit</button>
+    </div>
+    <div class="col" id="keyboard-container" >
+      <div class="row">
+        <div class="col text-center">
+          <button id="record"><i class="fa-solid fa-record-vinyl"></i></button>
+          <p class="piano-btn-label">Record</p>
+        </div>
+        <div class="col text-center">
+          <button id="pause"><i class="fa-solid fa-circle-pause"></i></button>
+          <p class="piano-btn-label">Pause</p>
+        </div>
+        <div class="col text-center">
+          <button id="reset"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <p class="piano-btn-label">Reset</p>
+        </div>
+        <div class="col text-center">
+          <p id="clock">00:00</p>
+        </div>
+      </div>
       <div id="keyboard" class="my-2 start-50 translate-middle-x">
         <div class="white-key" id="C">C</div>
         <div class="black-key one" id="C#">C#</div>
@@ -49,27 +82,5 @@
 <audio id="F#-audio" src="{% static 'audio/F#.mp3' %}"></audio>
 <audio id="G-audio" src="{% static 'audio/G.mp3' %}"></audio>
 <audio id="G#-audio" src="{% static 'audio/G#.mp3' %}"></audio>
-
-<div class="text-center">
-  <button id="play-tune">Play Tune</button>
-</div>
-<br>
-<div class="text-center">
-  <button id="record">Record</button>
-  <p id="clock">H</p>
-</div>
-<br>
-<div class="text-center">
-  <button id="pause">Pause</button>
-</div>
-<br>
-<div class="text-center">
-  <button id="reset">Reset</button>
-</div>
-<br>
-<div class="text-center">
-  <button id="submit">Submit</button>
-</div>
-<br>
 
 {% endblock %}

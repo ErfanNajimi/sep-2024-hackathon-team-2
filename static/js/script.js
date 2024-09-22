@@ -3,6 +3,7 @@
 
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
+let keysPlayed = [];
 // let computerTune = [];
 let clickCount = 0;
 
@@ -51,13 +52,14 @@ for (let index in keys) {
     let element = document.getElementById(`${keys[index]}`);
     element.addEventListener('click', e => {
         console.log(`${element.id}`);
+        keysPlayed.push(`${element.id}`);
         document.getElementById(`${element.id}-audio`).load();
         document.getElementById(`${element.id}-audio`).play();
 
 		// Colour change
 		const originalColour = element.style.backgroundColor;
 		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
     });
 
 }
@@ -74,7 +76,7 @@ document.addEventListener('keydown', e => {
 		const element = document.getElementById(note);
 		const originalColour = element.style.backgroundColor;
 		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 300);
+		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
     }
 });
 
@@ -188,6 +190,12 @@ timer(
     document.getElementById('reset'), 
     document.getElementById('clock'),
 );
+
+// Tracker
+
+// function tracker(status) {
+
+// }
 
 // LEADERBOARD
 
