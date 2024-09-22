@@ -3,7 +3,49 @@
 
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
-let computerTune = [];
+// let computerTune = [];
+let clickCount = 0;
+
+// const tunes = [
+//     "CDECCEDC",
+//     "EFGEFG",
+//     "GAGFECGAGFEC",
+//     "CGCCGC"
+// ];
+
+const tunesSet = [
+    // First click tunes
+    [
+        "CDECCEDC",
+        "EFGEFG",
+        "GAGFECGAGFEC",
+        "CGCCGC"
+    ],
+    // Second click tunes
+    [
+        "EDCDEEE",  
+        "DDDEDC",   
+        "EDCDEEE",  
+        "DDEDC"
+    ],
+    // Third click tunes
+    [
+        "CCGGAAG",
+        "FFEEDDC",
+        "GGFFEED",
+        "GGFFEED",
+        "CCGGAAG",
+        "FFEEDDC"
+    ],
+    // Fourth click tunes
+    [
+        "EDC",
+        "EDC",
+        "CCCC",
+        "DDDD",
+        "EDC"
+    ]
+];
 
 for (let index in keys) {
     let element = document.getElementById(`${keys[index]}`);
@@ -36,37 +78,74 @@ document.addEventListener('keydown', e => {
     }
 });
 
+// function playTune(tune) {
+//     let index = 0;
+//     function playNote() {
+//         if (index < tune.length) {
+//             let note = tune[index];
+//             document.getElementById(`${note}-audio`).load();
+//             document.getElementById(`${note}-audio`).play();
+//             index++;
+//             setTimeout(playNote, 1000); 
+//         }
+//     }
+//     playNote();
+// }
+
+function playNoteSequence(sequence, delay = 500) {
+    sequence.forEach((note, index) => {
+        setTimeout(() => {
+            let element = document.getElementById(`${note}`);
+            if (element) {
+                document.getElementById(`${note}-audio`).load();
+                document.getElementById(`${note}-audio`).play();
+
+                // Colour change
+                const originalColour = element.style.backgroundColor;
+                element.style.backgroundColor = '#B10054';
+                setTimeout(() => { element.style.backgroundColor = originalColour }, 300);
+            }
+        }, index * delay); // Delay each note
+    });
+}
+
 function playTune(tune) {
-    let index = 0;
-    function playNote() {
-        if (index < tune.length) {
-            let note = tune[index];
-            document.getElementById(`${note}-audio`).load();
-            document.getElementById(`${note}-audio`).play();
-            index++;
-            setTimeout(playNote, 1000); // Wait for 1 second before playing next note
-        }
-    }
-    playNote();
+    const sequence = tune.split(''); // Split the string into individual notes
+    playNoteSequence(sequence);
 }
-
-
-function generateTune(length = 5) {
-    computerTune = [];
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * keys.length);
-        computerTune.push(keys[randomIndex]);
-    }
-}
-
-
-
 
 document.getElementById('play-tune').addEventListener('click', () => {
-    generateTune();
-    console.log(computerTune);
-    playTune(computerTune);
+    let delayBetweenTunes = 0;
+    const currentTunes = tunesSet[clickCount % tunesSet.length];
+    console.log(currentTunes);
+
+    // Loop through each tune and play them with some delay between each
+    currentTunes.forEach((tune, index) => {
+        setTimeout(() => {
+            playTune(tune);
+        }, delayBetweenTunes);
+        
+        // Increase the delay for the next tune (500ms per note)
+        delayBetweenTunes += tune.length * 500;
+    });
+    clickCount++;
 });
+// function generateTune(length = 5) {
+//     computerTune = [];
+//     for (let i = 0; i < length; i++) {
+//         const randomIndex = Math.floor(Math.random() * keys.length);
+//         computerTune.push(keys[randomIndex]);
+//     }
+// }
+
+
+
+
+// document.getElementById('play-tune').addEventListener('click', () => {
+//     generateTune();
+//     console.log(computerTune);
+//     playTune(computerTune);
+// });
 
 // GAMEPLAY STAGES
 
