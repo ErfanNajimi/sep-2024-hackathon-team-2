@@ -288,10 +288,7 @@ ul .black-key-nav {
 .card-container {
     margin: 0 auto;
     margin-top: -20px;
-    /* padding: 25px; */
-    /* max-width: 400px; */
-    /* min-width: 360px;  */
-    /* background-color: #dfe6e9;  */
+
   }
 
 .card {
@@ -300,9 +297,13 @@ ul .black-key-nav {
     padding: 25px 15px;
     background-color: #EF5C14;
     margin: 30px 10px;
-    height: 200px;
-    box-shadow: 0 2px 5px #ccc;
+    height: 260px;
     text-align: left;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
   }
   
   .top {
@@ -320,10 +321,20 @@ ul .black-key-nav {
     font-size: 2em;
     text-align: center;
     flex: 1;
-    margin: 10% 20px 10px;
+    margin:auto;
     border: 2px dotted #b10054;
     border-radius: 10px;
+    height: fit-content;
+    padding: 4px;
+  }
 
+  .linkedin-icon {
+    background: linear-gradient(#EF5C14, #b10054);
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 20px;
+    margin:0 10px;
   }
   
   .card img {
@@ -344,6 +355,15 @@ ul .black-key-nav {
   .info {
     margin: 20px 0;
     color: #FFFF;
+  }
+
+  .role {
+    color:#FFFF;
+    margin: 20px 0;
+    font-weight: 400;
+    font-size:x-large;
+    border-bottom:2px solid #b10054;
+    width: fit-content;
   }
 
 /* Media Queries */
