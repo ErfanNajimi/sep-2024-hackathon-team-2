@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.models import User  # Import the User model
+from django.contrib.auth.models import User
 from .models import Tune
 
 
@@ -34,7 +34,8 @@ def mobile(request):
 def tunes(request):
     return  render(request, 'piano/teamTunes.html')
 
-# Add this function for handling user profile
 def profile_view(request, pk):
     user = get_object_or_404(User, pk=pk)
     return render(request, 'profile.html', {'user': user})
+
+

@@ -390,6 +390,9 @@ ul .black-key-nav {
     text-align: center;
     padding: 0;
     margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .social-networks li {
@@ -411,10 +414,7 @@ ul .black-key-nav {
 .card-container {
     margin: 0 auto;
     margin-top: -20px;
-    /* padding: 25px; */
-    /* max-width: 400px; */
-    /* min-width: 360px;  */
-    /* background-color: #dfe6e9;  */
+
   }
 
 .card {
@@ -423,9 +423,13 @@ ul .black-key-nav {
     padding: 25px 15px;
     background-color: #EF5C14;
     margin: 30px 10px;
-    height: 200px;
-    box-shadow: 0 2px 5px #ccc;
+    height: 260px;
     text-align: left;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
   }
   
   .top {
@@ -443,10 +447,20 @@ ul .black-key-nav {
     font-size: 2em;
     text-align: center;
     flex: 1;
-    margin: 10% 20px 10px;
+    margin:auto;
     border: 2px dotted #b10054;
     border-radius: 10px;
+    height: fit-content;
+    padding: 4px;
+  }
 
+  .linkedin-icon {
+    background: linear-gradient(#EF5C14, #b10054);
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 20px;
+    margin:0 10px;
   }
   
   .card img {
@@ -467,6 +481,15 @@ ul .black-key-nav {
   .info {
     margin: 20px 0;
     color: #FFFF;
+  }
+
+  .role {
+    color:#FFFF;
+    margin: 20px 0;
+    font-weight: 400;
+    font-size:x-large;
+    border-bottom:2px solid #b10054;
+    width: fit-content;
   }
 
 /* Media Queries */
@@ -602,5 +625,63 @@ ul .black-key-nav {
     .NavLink {
         padding: 3px 8px;  /* Adjusted link padding for small screens */
         font-size: 12px;  /* Reduced link font size for small screens */
+    }
+}
+
+/* Small devices in landscape form */
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    .logo {
+        width: 40px;  /* Further reduced size for small screens */
+        height: 40px;  /* Further reduced size for small screens */
+    }
+    nav {
+        padding: 0;
+        margin: 0;
+        max-height: fit-content;
+    }
+   
+    .NavBar {
+        padding: 0;
+    }
+
+    .landing-page {
+        max-width: 300px;
+        margin-top: 5px;  /* Adjusted for small screens */
+        padding: 5px;  /* Reduced padding */
+    }
+
+    /* Footer */
+    .footer-container {
+    border-top: 1px #D8B646 solid !important;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    }
+
+    .social-networks {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    }
+
+    .social-networks i {
+    font-size: 100%;
+    padding: 0;
+    color: #0a0a0a;
+    transition: color 0.3s ease;
+    }
+
+    .social-networks i:hover {
+    color: #b10054;
+    }
+
+    .p.mt-3 {
+    margin:0;
+    padding: 0;
+    }
+
+    .footer-container {
+    margin:0;
+    padding: 0;
     }
 }
