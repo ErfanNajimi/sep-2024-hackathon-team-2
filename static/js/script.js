@@ -1,6 +1,5 @@
 // PIANO
 
-
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
 let keysPlayed = [];
@@ -51,15 +50,21 @@ const tunesSet = [
 for (let index in keys) {
     let element = document.getElementById(`${keys[index]}`);
     element.addEventListener('click', e => {
-        console.log(`${element.id}`);
         keysPlayed.push(`${element.id}`);
         document.getElementById(`${element.id}-audio`).load();
         document.getElementById(`${element.id}-audio`).play();
 
+        //add note to music sheet
+        musicSheet()
+
 		// Colour change
-		const originalColour = element.style.backgroundColor;
-		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
+            element.style.backgroundColor = '#B10054'
+            setTimeout(function () {
+                if (element.id.includes('#')) {
+                element.style.backgroundColor = 'black'
+                } else {
+                    element.style.backgroundColor = '#FFFFF0'
+            } }, 175);
     });
 
 }
@@ -68,15 +73,23 @@ document.addEventListener('keydown', e => {
     const keyIndex = keyBindings.indexOf(e.key.toUpperCase());
     if (keyIndex !== -1) {
         let note = keys[keyIndex];
-        console.log(note);
+        keysPlayed.push(note);
         document.getElementById(`${note}-audio`).load();
         document.getElementById(`${note}-audio`).play();
 
+        //add note to music sheet
+        musicSheet()
+
 		// Colour change
 		const element = document.getElementById(note);
-		const originalColour = element.style.backgroundColor;
-		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
+		// Colour change
+            element.style.backgroundColor = '#B10054'
+            setTimeout(function () {
+                if (element.id.includes('#')) {
+                element.style.backgroundColor = 'black'
+                } else {
+                    element.style.backgroundColor = '#FFFFF0'
+            } }, 175);
     }
 });
 
@@ -101,6 +114,9 @@ function playNoteSequence(sequence, delay = 500) {
             if (element) {
                 document.getElementById(`${note}-audio`).load();
                 document.getElementById(`${note}-audio`).play();
+
+                //add note to music sheet
+                musicSheet()
 
                 // Colour change
                 const originalColour = element.style.backgroundColor;
@@ -253,3 +269,17 @@ document.getElementById('keyLabelSwitch').addEventListener('click', () => {
         }
     }
 });
+
+//MUSIC SHEET
+function musicSheet(e) {
+    const lastTenNotes = keysPlayed.slice(-10);
+
+    let sheetCol = document.getElementsByClassName("sheet-col")
+    
+    for (let i = 0; i < lastTenNotes.length; i++){
+        lastTenNotes[i] = lastTenNotes[i].toLowerCase()
+        lastTenNotes[i] = lastTenNotes[i].replace("#", "sharp")
+        sheetCol[i].innerHTML = `<div class="note-${lastTenNotes[i]}"><svg><g transform="translate(-525.000000, -622.000000)" fill="#000000"> <path d="M539.992,622 C539.031,622 538.984,623.002 538.984,623.002 L538.984,639.363 C536.748,637.715 533.058,637.713 529.788,639.589 C525.725,641.922 523.982,646.27 525.616,649.3 C527.279,652.384 532.097,652.896 536.16,650.563 C539.316,648.751 541.007,645.807 541,643 L541,623 C540.982,622.462 540.537,622 539.992,622"></path></g></svg></div>`
+    }
+}
+

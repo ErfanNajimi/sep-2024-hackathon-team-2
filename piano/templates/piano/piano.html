@@ -1,12 +1,23 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <br>
-  <div class="container d-flex justify-content-center" id="music-sheet">
-    <div class="row flex-column">
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div id="note"></div>
+  <div class="container d-flex justify-content-center my-3 pb-5" id="music-sheet">
+    <div class="row">
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="col-1"><img class="treble-clef" src="{% static 'images/treble-clef.png' %}" alt="Treble Clef"></div>
+      <div class="col-1"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
     </div>
   </div>
 <br>
