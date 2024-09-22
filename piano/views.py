@@ -32,7 +32,7 @@ def mobile(request):
     return render(request, 'piano/mobile.html')
 
 def tunes(request):
-    return render(request, 'piano/teamTunes.html')
+    return  render(request, 'piano/teamTunes.html')
 
 # Add this function for handling user profile
 def profile_view(request, pk):

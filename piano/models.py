@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Tune(models.Model):
@@ -11,3 +12,14 @@ class Tune(models.Model):
     
     def __str__(self):
         return f"{self.name}"
+
+class Score(models.Model):
+    player = models.ForeignKey(User, on_delete=models.CASCADE, name = "player")
+    score = models.IntegerField(default=0)
+
+    class Meta: 
+        ordering = ["score"]
+    
+    def __str__(self):
+        return f"{self.player}: {self.score} points"
+

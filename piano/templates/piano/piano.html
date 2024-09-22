@@ -1,24 +1,73 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <br>
-<div id = "keyboard">
-    <div class = "white-key" id="C"></div>
-    <div class = "black-key one" id="C#"></div>
-    <div class = "white-key" id="D"></div>
-    <div class = "black-key two" id="D#"></div>
-    <div class = "white-key" id="E"></div>
-    <div class = "white-key" id="F"></div>
-    <div class = "black-key three" id="F#"></div>
-    <div class = "white-key" id="G"></div>
-    <div class = "black-key four" id="G#"></div>
-    <div class = "white-key" id="A"></div>
-    <div class = "black-key five" id="A#"></div>
-    <div class = "white-key" id="B"></div>
+  <div class="container d-flex justify-content-center" id="music-sheet">
+    <div class="row flex-column">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div id="note"></div>
+    </div>
+  </div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="switch-box my-2">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="proModeSwitch">
+          <label class="form-check-label" for="proModeSwitch">Pro Mode</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="keyLabelSwitch">
+          <label class="form-check-label" for="keyLabelSwitch">Keyboard Key Labels</label>
+        </div>
+      </div>
+    </div>
+    <div class="col text-center">
+      <button id="play-tune">Play Tune</button>
+    </div>
+    <div class="col" id="keyboard-container" >
+      <div class="row">
+        <div class="col text-center">
+          <button id="record"><i class="fa-solid fa-record-vinyl"></i></button>
+          <p class="piano-btn-label">Record</p>
+        </div>
+        <div class="col text-center">
+          <button id="pause"><i class="fa-solid fa-circle-pause"></i></button>
+          <p class="piano-btn-label">Pause</p>
+        </div>
+        <div class="col text-center">
+          <button id="reset"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <p class="piano-btn-label">Reset</p>
+        </div>
+        <div class="col text-center">
+          <p id="clock">00:00</p>
+        </div>
+      </div>
+      <div id="keyboard" class="my-2 start-50 translate-middle-x">
+        <div class="white-key" id="C">C</div>
+        <div class="black-key one" id="C#">C#</div>
+        <div class="white-key" id="D">D</div>
+        <div class="black-key two" id="D#">D#</div>
+        <div class="white-key" id="E">E</div>
+        <div class="white-key" id="F">F</div>
+        <div class="black-key three" id="F#">F#</div>
+        <div class="white-key" id="G">G</div>
+        <div class="black-key four" id="G#">G#</div>
+        <div class="white-key" id="A">A</div>
+        <div class="black-key five" id="A#">A#</div>
+        <div class="white-key" id="B">B</div>
+      </div>
+    </div>
+    <div class="col text-center">
+      <button id="submit">Submit</button>
+    </div>
+  </div>
 </div>
-
-{{ tunes }}
+{% for tune in tunes %}
+  {{ tune.note_progression|json_script:"tune" }}
+{% endfor %}
 
 <audio id="A-audio" src="{% static 'audio/A.mp3' %}"></audio>
 <audio id="A#-audio" src="{% static 'audio/A#.mp3' %}"></audio>
