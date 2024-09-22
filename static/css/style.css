@@ -424,6 +424,75 @@ ul .black-key-nav {
     width: fit-content;
   }
 
+  /* Stage1 profile selection */
+  .radio-label {
+    cursor: pointer;
+    text-align: center;
+}
+
+.radio-label img {
+    width: 100px; /* Set your desired width */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.radio-label input {
+    display: none; /* Hide the radio input */
+}
+
+.radio-label input:checked + img {
+    transform: scale(1.1); /* Scale up the selected image */
+    border: 2px solid #4CAF50; /* Optional: add a border to the selected image */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* For line positioning */
+}
+
+.button-group::before,
+.button-group::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Aligns vertically */
+    width: 100%; /* Full width */
+    height: 2px; /* Line thickness */
+    background-color: #ccc; /* Line color */
+    z-index: -1; /* Behind the buttons */
+}
+
+.button-group::before {
+    left: 0; /* Line starts from the left */
+    right: 50%; /* Extends to the center */
+}
+
+.button-group::after {
+    right: 0; /* Extends to the right */
+}
+
+.btn-circle {
+    width: 60px; /* Button width */
+    height: 60px; /* Button height */
+    border-radius: 50%; /* Makes the button circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #007bff; /* Button border */
+    background-color: white; /* Background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Transition effects */
+}
+
+.btn-circle:hover {
+    background-color: #007bff; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-color: #007bff; /* Change border color on hover */
+}
+
+
+
 /* Media Queries */
 
 /* Medium devices (tablets, 768px and up) */
