@@ -25,6 +25,8 @@ body {
 }
 
 /* Logo */
+
+
 .logo {
     width: 80px;  /* Reduced default size */
     height: 80px;  /* Reduced default size */
@@ -81,12 +83,11 @@ body {
     justify-content: center;
     position: relative;
     width: 420px;
-    margin-left: 20%;
 }
 
 .white-key {
   background-color: #FFFFF0;
-  display: inline-block;
+  display: flex;
   height: 120px;
   width: 60px;
   z-index: 1;
@@ -94,6 +95,10 @@ body {
   border-radius: 4px;
   border-right: none;
   box-shadow: 0 2px 5px gray;
+  color: black;
+  align-items: end;
+  justify-content: center;
+  user-select: none;
 }
 
 .white-key:last-child {
@@ -102,13 +107,17 @@ body {
 
 .black-key {
     background-color: black;
-    display: inline-block;
+    display: flex;
     height: 70px;
     width: 30px;
     z-index: 2;
     position: absolute;
     border-radius: 2px;
     box-shadow: 0 2px 5px gray;
+    color: white;
+    align-items: end;
+    justify-content: center;
+    user-select: none;
 }
 
 .one {
@@ -179,6 +188,71 @@ td {
 
 tr:hover {
     background-color: #f9f9f9;
+}
+
+/* sidebar piano */
+
+.offcanvas.offcanvas-start {
+ width: 200px;
+}
+
+.offcanvas-body {
+  padding: 5px;
+}
+
+ ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+ul .key-nav {
+    position: relative;
+    width: 180px;
+    height: 60px;
+    border: 1px solid black;
+    border-right: none;
+    background: #fffff0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+} 
+
+ul .key-nav a {
+  width: 180px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul .key-nav a:hover {
+  text-decoration: underline;
+}
+
+ul .key-nav a:active {
+  background-color: black;
+}
+
+ul .key-nav a:visited {
+  background-color: #ccc;
+}
+
+ul .black-key-nav {
+    position: absolute;
+    top: 45px;
+    left: -1px;
+    width: 60px;
+    height: 30px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px #666;
+    z-index: 999;
 }
 
 /* Footer */

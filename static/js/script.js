@@ -93,3 +93,36 @@ function searchPlayer() {
 }
 
 // MOBILE
+
+//SWITCHES
+document.getElementById('proModeSwitch').addEventListener('click', () => {
+    if (document.getElementById('proModeSwitch').checked == true) {
+        document.getElementById('keyLabelSwitch').checked = false
+        for (let index in keys) {
+            let element = document.getElementById(`${keys[index]}`);
+            element.innerText = "";
+        }
+    } else {
+        for (let index in keys) {
+            document.getElementById('keyLabelSwitch').checked = false
+            let element = document.getElementById(`${keys[index]}`);
+            element.innerText = element.id;
+        }
+    }
+});
+
+document.getElementById('keyLabelSwitch').addEventListener('click', () => {
+    if (document.getElementById('keyLabelSwitch').checked == true) {
+        document.getElementById('proModeSwitch').checked = false
+        for (let index in keys) {
+            let element = document.getElementById(`${keys[index]}`);
+            element.innerText = keyBindings[index];
+        }
+    } else if (document.getElementById('keyLabelSwitch').checked == false) {
+        document.getElementById('proModeSwitch').checked = false
+        for (let index in keys) {
+            let element = document.getElementById(`${keys[index]}`);
+            element.innerText = element.id;
+        }
+    }
+});
