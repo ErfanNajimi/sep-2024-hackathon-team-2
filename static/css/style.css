@@ -284,6 +284,68 @@ ul .black-key-nav {
     color: #b10054;
 }
 
+/* Team profiles */
+.card-container {
+    margin: 0 auto;
+    margin-top: -20px;
+    /* padding: 25px; */
+    /* max-width: 400px; */
+    /* min-width: 360px;  */
+    /* background-color: #dfe6e9;  */
+  }
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    padding: 25px 15px;
+    background-color: #EF5C14;
+    margin: 30px 10px;
+    height: 200px;
+    box-shadow: 0 2px 5px #ccc;
+    text-align: left;
+  }
+  
+  .top {
+    border-radius: 25px 25px 0 0;
+    height: 100px;
+    width: 100%;
+    background-color: #FFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+  }
+  
+  .name {
+    font-size: 2em;
+    text-align: center;
+    flex: 1;
+    margin: 10% 20px 10px;
+    border: 2px dotted #b10054;
+    border-radius: 10px;
+
+  }
+  
+  .card img {
+    margin: 30px 20px 0 0;
+  }
+  
+  .circle-img {
+    border-radius: 50%;
+    border: 7px solid #fff;
+    width: 120px;
+    height: 120px;
+  }
+  
+  .bottom {
+    margin-top: 60px;
+  }
+  
+  .info {
+    margin: 20px 0;
+    color: #FFFF;
+  }
+
 /* Media Queries */
 
 /* Medium devices (tablets, 768px and up) */

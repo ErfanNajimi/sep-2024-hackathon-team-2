@@ -30,3 +30,7 @@ def leaderboard(request):
 
 def mobile(request):
     return  render(request, 'piano/mobile.html')
+
+def tunes(request):
+    return  render(request, 'piano/teamTunes.html')
+
