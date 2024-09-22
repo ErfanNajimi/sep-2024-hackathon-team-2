@@ -147,7 +147,47 @@ document.getElementById('play-tune').addEventListener('click', () => {
 //     playTune(computerTune);
 // });
 
-// GAMEPLAY STAGES
+// GAMEPLAY
+
+// Timer
+function timer(play, pause, reset, clock) {
+    let min = 0;
+    let sec = 55;
+    play.addEventListener('click', () => {
+        x = setInterval(function() {
+                let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
+                let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
+                clock.innerText = `${minDisplay}:${secDisplay}`;
+                if (sec < 59) {
+                    sec += 1; 
+                } else {
+                    sec = 0; 
+                    min += 1; 
+                };
+            }, 1000);  
+    });
+
+    pause.addEventListener('click', () => {
+        clearInterval(x);
+    });
+    
+    reset.addEventListener('click', () => {
+        clearInterval(x);
+        min = 0;
+        sec = 0;
+        let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
+        let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
+        clock.innerText = `${minDisplay}:${secDisplay}`;
+    });
+}
+
+
+timer(
+    document.getElementById('record'), 
+    document.getElementById('pause'), 
+    document.getElementById('reset'), 
+    document.getElementById('clock'),
+);
 
 // LEADERBOARD
 
