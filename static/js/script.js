@@ -53,13 +53,12 @@ for (let index in keys) {
     element.addEventListener('click', e => {
         console.log(`${element.id}`);
         keysPlayed.push(`${element.id}`);
-        document.getElementById(`${element.id}-audio`).load();
-        document.getElementById(`${element.id}-audio`).play();
+        const audioElement = document.getElementById(`${element.id}-audio`);
+        audioElement.load();
+        audioElement.play();
 
 		// Colour change
-		const originalColour = element.style.backgroundColor;
-		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
+        changeColor(element);
     });
 
 }
@@ -69,30 +68,23 @@ document.addEventListener('keydown', e => {
     if (keyIndex !== -1) {
         let note = keys[keyIndex];
         console.log(note);
-        document.getElementById(`${note}-audio`).load();
-        document.getElementById(`${note}-audio`).play();
+        const audioElement = document.getElementById(`${note}-audio`);
+        audioElement.load();
+        audioElement.play();
 
 		// Colour change
 		const element = document.getElementById(note);
-		const originalColour = element.style.backgroundColor;
-		element.style.backgroundColor = '#B10054';
-		setTimeout(function () { element.style.backgroundColor = `${originalColour}` }, 175);
+        changeColor(element);
     }
 });
 
-// function playTune(tune) {
-//     let index = 0;
-//     function playNote() {
-//         if (index < tune.length) {
-//             let note = tune[index];
-//             document.getElementById(`${note}-audio`).load();
-//             document.getElementById(`${note}-audio`).play();
-//             index++;
-//             setTimeout(playNote, 1000); 
-//         }
-//     }
-//     playNote();
-// }
+function changeColor(element) {
+    const originalColour = element.style.backgroundColor;
+    element.style.backgroundColor = '#B10054';
+    setTimeout(() => {
+        element.style.backgroundColor = originalColour;
+    }, 50);
+}
 
 function playNoteSequence(sequence, delay = 500) {
     sequence.forEach((note, index) => {
@@ -132,22 +124,6 @@ document.getElementById('play-tune').addEventListener('click', () => {
     });
     clickCount++;
 });
-// function generateTune(length = 5) {
-//     computerTune = [];
-//     for (let i = 0; i < length; i++) {
-//         const randomIndex = Math.floor(Math.random() * keys.length);
-//         computerTune.push(keys[randomIndex]);
-//     }
-// }
-
-
-
-
-// document.getElementById('play-tune').addEventListener('click', () => {
-//     generateTune();
-//     console.log(computerTune);
-//     playTune(computerTune);
-// });
 
 // GAMEPLAY
 
