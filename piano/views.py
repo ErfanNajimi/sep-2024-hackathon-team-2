@@ -47,7 +47,7 @@ def stage3(request):
     return render(request, 'piano/stage3.html')
 
 def leaderboard(request):
-    scores = list(Score.objects.all().filter(player = request.user).values_list('score'))
+    scores = list(Score.objects.all().filter(player = request.user.id).values_list('score'))
     processed_scores = []
     for score in scores:
         processed_scores.append(int(str(score[0]).replace(',','')))

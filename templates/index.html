@@ -4,13 +4,18 @@
 {% block title %}Piano Game{% endblock title %}
 
 {% block content %}
-<div class="container border border-dark rounded landing-page">
-    <div class="float-end">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
+<div class="container border border-dark rounded landing-page" id="home-box">
     <div class="text-center">
         <h1>Piano Music Game</h1>
         <p class="lead text-muted">Play, compete, and master your skills.</p>
+        <br>
+        <a class="btn btn-warning" href="{% url 'tunes' %}">
+            Meet the Development Team!
+        </a>
+        <br><br>
+        <a class="btn btn-primary" href="{% url 'stage1' %}">
+            Coming soon ... (sneak peak)
+        </a>
         <!-- <a href="{% url 'account_login' %}" class="btn btn-outline-dark mt-4 rounded">Login</a> -->
     </div>
     <!-- <div class="text-center mt-4">
