@@ -2,16 +2,18 @@
 {% load static %}
 
 {% block content %}
-
+<p>hi + {{ scores }}</p>
 <!-- Add HTML Here -->
+ <div class="row">
+        <div class="col d-flex justify-content-center">
  <div class="leaderboard-container">
     <h1 class="leaderboard-h1">Leaderboard</h1>
 
     <input type="text" id="search-bar" placeholder="Search Player...">
 
     <!-- Leaderboard Table -->
-
-    <table id="leaderboard">
+     
+            <table id="leaderboard">
         <thead>
             <tr>
                 <th>Rank</th>
@@ -48,6 +50,10 @@
         </tbody>
     </table>
  </div>
+        </div>
+     </div>
+
+    
 
  <script src="script.js"></script>
 

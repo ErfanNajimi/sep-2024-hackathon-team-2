@@ -5,4 +5,66 @@
 
 <!-- Add HTML Here -->
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body inst-body">
+          <h1>Instructions</h1>
+          <div>
+          <h2>Step 1</h2>
+          <p> Click  <span>"<i class="fas fa-music"></i> Play! "</span> on the navigation bar. It is located either at the top of the page or on the side navigation bar.</p>
+          <p><img src="./images/navbar_play.png" alt="image of navigation bar with a highlight on the play link" class="inst-step1-img1"></p>
+          <p><img src="./images/sidenavbar_play.png" alt="image of side navigation bar with a highlight on the play link" class="inst-step1-img2"></p>
+          </div>
+          <div>
+          <h2>Step 2</h2>
+          <p>Click "Play Tune". You will: 
+              <ul>
+                  <li>Hear the music playing</li>
+                  <li>See visually which piano buttons to use to play the tune </li>
+              </ul>
+          </p>
+          <p>
+              <img src="./images/play_tune.png" alt="visual representation of a piano with Play Tune button highlighted" class="inst-step2-img1">
+          </p>
+          </div>
+          <div>
+              <h2>Step 3</h2>
+              <p>Press the "Record" key when you are ready! This will start the timer. </p>
+              <p><img src="./images/record_button.png" alt="Record button and timer highlighted on piano image" class="inst-step3-img1"></p>
+              <p>Play the tune! </p>
+              <p>You can pause playing if you need some time by pressing "Pause". Press "Record" again when you are ready to continue. </p>
+              <p><img src="./images/pause_button.png" alt="Pause button highlighted on piano image" class="inst-step3-img1"></p>
+              <p>Press the "Stop" key when you complete playing the tune.</p>
+              <p><img src="./images/stop_button.png" alt="Stop button highlighted on piano image" class="inst-step3-img1"></p>
+              <p>Remember, you will get extra points if you complete playing in less than a minute!</p>
+          </div>
+          <div>
+              <h2>Step 4</h2>
+              <p>Now that, you have recorded your play, you can go to "Review" and see your score! Save your score if you are happy with it. Close th window and reset if you want to have another go! </p>
+              <p><img src="./images/reset_button.png" alt="Stop button highlighted on piano image" class="inst-step3-img1"></p>
+          </div>
+          <div>
+              <p>Please do not forget to register!</p>
+          </div>
+   
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
