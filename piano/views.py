@@ -47,12 +47,16 @@ def stage3(request):
     return render(request, 'piano/stage3.html')
 
 def leaderboard(request):
-    scores = Score.objects.all().values()
+    scores = list(Score.objects.all().filter(player = request.user).values_list('score'))
+    processed_scores = []
+    for score in scores:
+        processed_scores.append(int(str(score[0]).replace(',','')))
+    total_score = sum(processed_scores)
 
     return render(
         request, 
         'piano/leaderboard.html',
-        {'scores':scores},
+        {'score':total_score},
     )
 
 def mobile(request):
@@ -65,18 +69,18 @@ def profile_view(request, pk):
     user = get_object_or_404(User, pk=pk)
     return render(request, 'profile.html', {'user': user})
 
-# New signup view for user registration
-def signup_view(request):
-    if request.method == 'POST':
-        form = SignupForm(request.POST)
-        if form.is_valid():
-            user = form.save(request)  # Save the user and create an account
-            messages.success(request, "You have successfully signed up!")  # Success message
-            return redirect('profile', pk=user.pk)  # Redirect to the user's profile page
-        else:
-            # Form has errors, return it to the template with messages
-            messages.error(request, "Please correct the errors below.")
-    else:
-        form = SignupForm()  # Show an empty form initially
+# # New signup view for user registration
+# def signup_view(request):
+#     if request.method == 'POST':
+#         form = SignupForm(request.POST)
+#         if form.is_valid():
+#             user = form.save(request)  # Save the user and create an account
+#             messages.success(request, "You have successfully signed up!")  # Success message
+#             return redirect('profile', pk=user.pk)  # Redirect to the user's profile page
+#         else:
+#             # Form has errors, return it to the template with messages
+#             messages.error(request, "Please correct the errors below.")
+#     else:
+#         form = SignupForm()  # Show an empty form initially
 
-    return render(request, 'signup_template.html', {'form': form})
+#     return render(request, 'signup_template.html', {'form': form})
