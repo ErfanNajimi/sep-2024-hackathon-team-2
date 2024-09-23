@@ -106,9 +106,6 @@ Replicate a Short Tune is a music game designed for players to listen to and rep
 ### Database
 
 * The database will track user scores, progress, tune data, and leaderboard rankings.
-* Database model:
-
-![Database]()
 
 ### Colour Scheme
 
@@ -182,6 +179,14 @@ HTML5, CSS, Javascript, Python, Django
 * [Doodle](https://doodle.com/ "" ) was used to schedule meetings and coordinate team collaboration.
 
 
+**Project Status: Under Development**
+
+![Image of development progress](static/images/avatar.png)
+
+This project is currently in active development. New features, improvements, and bug fixes are being added regularly.
+
+**Thank you for your patience and support!**
+
 ## Deployment & Local Development
 
 ### Deployment
@@ -228,7 +233,7 @@ Game functionality and performance tested across devices.
 
 - [Kelsey](https://github.com/kelseyjaneadams)
 - [Mehtap](https://github.com/hisarciklilar)
-- [Erfan] (https://github.com/ErfanNajimi)
+- [Erfan](https://github.com/ErfanNajimi)
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
 - [Liam](https://github.com/caleom)
