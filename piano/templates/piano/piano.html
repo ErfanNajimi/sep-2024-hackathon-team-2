@@ -1,18 +1,29 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <br>
-  <div class="container d-flex justify-content-center" id="music-sheet">
-    <div class="row flex-column">
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div id="note"></div>
+  <div class="container justify-content-center my-3 pb-5 d-none d-md-flex" id="music-sheet">
+    <div class="row">
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="col-1"><img class="treble-clef" src="{% static 'images/treble-clef.png' %}" alt="Treble Clef"></div>
+      <div class="col-1"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
+      <div class="col-1 sheet-col"></div>
     </div>
   </div>
 <br>
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="row justify-content-center">
+    <div class="col-2">
       <div class="switch-box my-2">
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="proModeSwitch">
@@ -24,50 +35,99 @@
         </div>
       </div>
     </div>
-    <div class="col text-center">
+    <div class="col-2 text-center">
       <button id="play-tune">Play Tune</button>
     </div>
-    <div class="col" id="keyboard-container" >
-      <div class="row">
-        <div class="col text-center">
-          <button id="record"><i class="fa-solid fa-record-vinyl"></i></button>
-          <p class="piano-btn-label">Record</p>
+    <!-- Button trigger modal -->
+    <div class="col-2 text-center">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="review">
+        Review
+      </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Summary</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 id="tune-name"></h2>
+            <p id="time-spent"></p>
+            <p id="number-of-resets"></p>
+            <p id="scored"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <form method="post">
+              {% csrf_token %}
+              <span class="d-none">{{ score_form }}</span>
+              <button type="submit" class="btn btn-primary" id="save">Save</button>
+            </form>
+          </div>
         </div>
-        <div class="col text-center">
-          <button id="pause"><i class="fa-solid fa-circle-pause"></i></button>
-          <p class="piano-btn-label">Pause</p>
-        </div>
-        <div class="col text-center">
-          <button id="reset"><i class="fa-solid fa-arrows-rotate"></i></button>
-          <p class="piano-btn-label">Reset</p>
-        </div>
-        <div class="col text-center">
-          <p id="clock">00:00</p>
-        </div>
-      </div>
-      <div id="keyboard" class="my-2 start-50 translate-middle-x">
-        <div class="white-key" id="C">C</div>
-        <div class="black-key one" id="C#">C#</div>
-        <div class="white-key" id="D">D</div>
-        <div class="black-key two" id="D#">D#</div>
-        <div class="white-key" id="E">E</div>
-        <div class="white-key" id="F">F</div>
-        <div class="black-key three" id="F#">F#</div>
-        <div class="white-key" id="G">G</div>
-        <div class="black-key four" id="G#">G#</div>
-        <div class="white-key" id="A">A</div>
-        <div class="black-key five" id="A#">A#</div>
-        <div class="white-key" id="B">B</div>
       </div>
     </div>
-    <div class="col text-center">
-      <button id="submit">Submit</button>
+</div>
+</div>
+<div class="row justify-content-center m-1">
+  <div class="col-5"id="keyboard-container" >
+    <div class="row">
+      <div class="col text-center">
+        <button id="record"><i class="fa-solid fa-record-vinyl"></i></button>
+        <p class="piano-btn-label">Record</p>
+      </div>
+      <div class="col text-center">
+        <button id="pause"><i class="fa-solid fa-circle-pause"></i></button>
+        <p class="piano-btn-label">Pause</p>
+      </div>
+      <div class="col text-center">
+        <button id="stop"><i class="fa-solid fa-stop"></i></button>
+        <p class="piano-btn-label">Stop</p>
+      </div>
+      <div class="col text-center">
+        <button id="reset"><i class="fa-solid fa-arrows-rotate"></i></button>
+        <p class="piano-btn-label">Reset</p>
+      </div>
+      <div class="col text-center">
+        <p id="clock">00:00</p>
+      </div>
+    </div>
+    <div id="keyboard" class="my-2 start-50 translate-middle-x">
+      <div class="white-key" id="C">C</div>
+      <div class="black-key one" id="C#">C#</div>
+      <div class="white-key" id="D">D</div>
+      <div class="black-key two" id="D#">D#</div>
+      <div class="white-key" id="E">E</div>
+      <div class="white-key" id="F">F</div>
+      <div class="black-key three" id="F#">F#</div>
+      <div class="white-key" id="G">G</div>
+      <div class="black-key four" id="G#">G#</div>
+      <div class="white-key" id="A">A</div>
+      <div class="black-key five" id="A#">A#</div>
+      <div class="white-key" id="B">B</div>
     </div>
   </div>
 </div>
-{% for tune in tunes %}
-  {{ tune.note_progression|json_script:"tune" }}
-{% endfor %}
+
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <audio id="A-audio" src="{% static 'audio/A.mp3' %}"></audio>
 <audio id="A#-audio" src="{% static 'audio/A#.mp3' %}"></audio>
@@ -81,5 +141,7 @@
 <audio id="F#-audio" src="{% static 'audio/F#.mp3' %}"></audio>
 <audio id="G-audio" src="{% static 'audio/G.mp3' %}"></audio>
 <audio id="G#-audio" src="{% static 'audio/G#.mp3' %}"></audio>
+
+{{ tunes | json_script:"tunes" }}
 
 {% endblock %}

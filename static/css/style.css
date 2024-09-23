@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&family=Open+Sans:wght@300;500&family=Playfair+Display:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+:root{
+    --music-sheet-height:100px;
+}
+
 /* Global Styles */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -76,6 +80,11 @@ body {
     max-width: 600px;
     min-width: 400px;
     margin-top: 10%;
+}
+
+.landing-page:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
 }
 
 /* Piano */
@@ -159,6 +168,7 @@ body {
 
 #record,
 #pause,
+#stop,
 #reset {
     font-size: 200%;
     color: white;
@@ -167,6 +177,7 @@ body {
 
 #record:hover,
 #pause:hover,
+#stop:hover,
 #reset:hover {
     color: #b10054;
 }
@@ -178,24 +189,72 @@ body {
 
 /* Music Sheet */
 #music-sheet .row {
-    height: 100px;
+    height: var(--music-sheet-height);
     width: 50vw;;
     position: relative;
     border-left: 5px solid black;
-    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 #music-sheet .col {
     border-top: 2px solid black;
 }
 
-#note {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: orange;
-    position: absolute; 
-    left: 50px;
-    top: 100px;
+#music-sheet .sheet-col,
+#music-sheet svg,
+#music-sheet .col-1 {
+    max-height: 30px;
+}
+
+#music-sheet .h-line {
+    width: 100%;
+    height: 25%;
+    border-bottom: 2px solid black;
+}
+
+#music-sheet .note-c,
+#music-sheet .note-csharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 1 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-d,
+#music-sheet .note-dsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 2 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-e {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 3 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-f,
+#music-sheet .note-fsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 4 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-g,
+#music-sheet .note-gsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 5 - (var(--music-sheet-height) /8));
+}
+
+
+#music-sheet .note-a,
+#music-sheet .note-asharp  {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 6 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-b {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 7 - (var(--music-sheet-height) /8));
+}
+
+.treble-clef {
+    position: relative;
+    bottom: 100px;
 }
 
 /* Gameplay stages */
@@ -325,6 +384,9 @@ ul .black-key-nav {
     text-align: center;
     padding: 0;
     margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .social-networks li {
@@ -690,9 +752,6 @@ div .input-group {
     text-align: center;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     }
 
     .social-networks i {
