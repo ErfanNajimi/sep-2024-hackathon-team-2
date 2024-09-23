@@ -6,46 +6,23 @@ let keysPlayed = [];
 // let computerTune = [];
 let clickCount = 0;
 
-// const tunes = [
-//     "CDECCEDC",
-//     "EFGEFG",
-//     "GAGFECGAGFEC",
-//     "CGCCGC"
-// ];
+// Retrieving tunes from database
+const tunesSetRaw = document.getElementById('tunes').innerText;
+// Hide data after retrieval 
+document.getElementById('tunes').innerText = '{{ tunes }}';
 
-const tunesSet = [
-    // First click tunes
-    [
-        "CDECCEDC",
-        "EFGEFG",
-        "GAGFECGAGFEC",
-        "CGCCGC"
-    ],
-    // Second click tunes
-    [
-        "EDCDEEE",  
-        "DDDEDC",   
-        "EDCDEEE",  
-        "DDEDC"
-    ],
-    // Third click tunes
-    [
-        "CCGGAAG",
-        "FFEEDDC",
-        "GGFFEED",
-        "GGFFEED",
-        "CCGGAAG",
-        "FFEEDDC"
-    ],
-    // Fourth click tunes
-    [
-        "EDC",
-        "EDC",
-        "CCCC",
-        "DDDD",
-        "EDC"
-    ]
-];
+// Processing raw string data
+let tunesSetProcessing = tunesSetRaw.replaceAll('[','');
+tunesSetProcessing = tunesSetProcessing.replaceAll(']','');
+tunesSetProcessing = tunesSetProcessing.replaceAll('"','');
+tunesSetProcessing = tunesSetProcessing.replaceAll(',','');
+tunesSetProcessing = tunesSetProcessing.split(" ");
+
+for (let i in tunesSetProcessing) {
+    tunesSetProcessing[i] = tunesSetProcessing[i].split("/");
+}
+
+const tunesSet = tunesSetProcessing
 
 for (let index in keys) {
     let element = document.getElementById(`${keys[index]}`);
@@ -168,10 +145,16 @@ document.getElementById('play-tune').addEventListener('click', () => {
 // GAMEPLAY
 
 // Timer
+let firstClick = true;
+
 function timer(play, pause, reset, clock) {
     let min = 0;
     let sec = 55;
     play.addEventListener('click', () => {
+        if (firstClick) {
+            keysPlayed = [];
+            firstClick = false;
+        };
         x = setInterval(function() {
                 let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
                 let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
@@ -190,6 +173,7 @@ function timer(play, pause, reset, clock) {
     });
     
     reset.addEventListener('click', () => {
+        keysPlayed = [];
         clearInterval(x);
         min = 0;
         sec = 0;
