@@ -4,7 +4,7 @@
 
 Proudly present our retro game: Piano Music Game
 
-![Am I responsive](/static/images/mockup.png)
+![Am I responsive](static/images/mockup.png)
 
 [View Piano Music Game live link ](https://sep-2024-hackathon-e6134e4b3383.herokuapp.com/)
 
@@ -106,9 +106,6 @@ Replicate a Short Tune is a music game designed for players to listen to and rep
 ### Database
 
 * The database will track user scores, progress, tune data, and leaderboard rankings.
-* Database model:
-
-![Database]()
 
 ### Colour Scheme
 
@@ -122,29 +119,20 @@ The game's imagery will consist of modern piano graphics and simple notes. The U
 
 The wireframes provide a visual representation of the different pages and features of the app. They serve as a blueprint for the design and layout of each page, helping to visualize the user interface and overall user experience. These wireframes were created using Balsamiq, a tool that enables quick and intuitive sketching of design ideas.
 
-<details><summary>Home / Login / Signup</summary>
-  <img src="/static/images/wireframes/login-signup.png" alt="Login/Signup Wireframe">
-</details>
+### Wireframes
 
-<details><summary>User Page</summary>
-  <img src="/static/images/wireframes/user-page.png" alt="User Page Wireframe">
-</details>
+#### Heme
 
-<details><summary>Listen to the Tune</summary>
-  <img src="/static/images/wireframes/listen to the Tune.png" alt="Listen to Tune Wireframe">
-</details>
+![Main Menu](static/images/wireframes/Home.png)
 
-<details><summary>Listen to the Tune 2</summary>
-  <img src="/static/images/wireframes/listen-to-the-tune.png" alt="Listen to the Tune 2 Wireframe">
-</details>
+#### Play!
 
-<details><summary>Leaderboard</summary>
-  <img src="/static/images/wireframes/leaderboard.png" alt="Leaderboard Wireframe">
-</details>
+![Instructions](static/images/wireframes/Play.png)
 
-<details><summary>Leaderboard 2</summary>
-  <img src="/static/images/wireframes/leaderboard2.png" alt="Leaderboard 2 Wireframe">
-</details>
+#### Leaderboard
+
+![Main Menu](static/images/wireframes/Leaderboard.png)
+
 
 
 ## Features
@@ -178,7 +166,7 @@ HTML5, CSS, Javascript, Python, Django
 * HTML
 * CSS
 * JavaScript
-* python
+* Python
 
 ### Frameworks, Libraries & Programs Used
 
@@ -189,6 +177,15 @@ HTML5, CSS, Javascript, Python, Django
 * [Am I Risponsive](https://ui.dev/amiresponsive/ "") was used to check the responsiveness of the site across different device sizes.
 * [Tinypng](https://tinypng.com/ "") was used to compress images, optimizing them for faster loading times. 
 * [Doodle](https://doodle.com/ "" ) was used to schedule meetings and coordinate team collaboration.
+
+
+**Project Status: Under Development**
+
+![Image of development progress](static/images/avatar.png)
+
+This project is currently in active development. New features, improvements, and bug fixes are being added regularly.
+
+**Thank you for your patience and support!**
 
 ## Deployment & Local Development
 
@@ -201,8 +198,6 @@ Deployed via GitHub Pages:
 3. Go to Settings > Pages.
 4. Choose main as the branch and /root for the folder.
 5. Save and access the live link at the URL provided.
-
-### Local Development
 
 #### How to Fork
 
@@ -234,23 +229,26 @@ Game functionality and performance tested across devices.
     1. [Step 1] Sound playback was inconsistent. Fixed by adjusting the sound buffer.
     2. [Step 2] Score not updating correctly. Fixed by ensuring score calculation after tune replication.
 
-## Credits
+## Contributors
 
 - [Kelsey](https://github.com/kelseyjaneadams)
 - [Mehtap](https://github.com/hisarciklilar)
-- [Erfan] (https://github.com/ErfanNajimi)
+- [Erfan](https://github.com/ErfanNajimi)
 - [Marlon](https://github.com/Markpm-code)
 - [Noah](https://github.com/Noah-Samawi)
 - [Liam](https://github.com/caleom)
 - [Jab](https://github.com/Jab90)
 
-### Code Used
+### Credits
 
-All the codes in this Repo was developed by us!
+The tunes used in creation of the game and their notes are obtained through:
+
+- ChatGPT
+- Microsoft Copilot
 
 ### Content
 
-This content has been created by us - Retro Rascals -
+This content has been created by us.
 
 ###  Media
 
