@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&family=Open+Sans:wght@300;500&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --music-sheet-height:100px;
+}
 
 /* Global Styles */
 body {
@@ -77,7 +82,18 @@ body {
     margin-top: 10%;
 }
 
+.landing-page:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
+}
+
 /* Piano */
+#keyboard-container {
+    background-color: black;
+    border-radius: 30px 30px 5px 5px;
+    padding-top: 20px;
+}
+
 #keyboard {
     display: flex;
     justify-content: center;
@@ -138,6 +154,107 @@ body {
 
 .five {
     left: 345px;
+}
+
+#clock {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    font-size: 200%;
+    background-color: grey;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#record,
+#pause,
+#stop,
+#reset {
+    font-size: 200%;
+    color: white;
+    background-color: black;
+}
+
+#record:hover,
+#pause:hover,
+#stop:hover,
+#reset:hover {
+    color: #b10054;
+}
+
+.piano-btn-label {
+    margin-bottom: 0;
+    color: white;
+}
+
+/* Music Sheet */
+#music-sheet .row {
+    height: var(--music-sheet-height);
+    width: 50vw;;
+    position: relative;
+    border-left: 5px solid black;
+    border-top: 2px solid black;
+}
+#music-sheet .col {
+    border-top: 2px solid black;
+}
+
+#music-sheet .sheet-col,
+#music-sheet svg,
+#music-sheet .col-1 {
+    max-height: 30px;
+}
+
+#music-sheet .h-line {
+    width: 100%;
+    height: 25%;
+    border-bottom: 2px solid black;
+}
+
+#music-sheet .note-c,
+#music-sheet .note-csharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 1 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-d,
+#music-sheet .note-dsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 2 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-e {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 3 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-f,
+#music-sheet .note-fsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 4 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-g,
+#music-sheet .note-gsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 5 - (var(--music-sheet-height) /8));
+}
+
+
+#music-sheet .note-a,
+#music-sheet .note-asharp  {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 6 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-b {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 7 - (var(--music-sheet-height) /8));
+}
+
+.treble-clef {
+    position: relative;
+    bottom: 100px;
 }
 
 /* Gameplay stages */
@@ -267,6 +384,9 @@ ul .black-key-nav {
     text-align: center;
     padding: 0;
     margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .social-networks li {
@@ -283,6 +403,192 @@ ul .black-key-nav {
 .social-networks i:hover {
     color: #b10054;
 }
+
+/* Team profiles */
+.card-container {
+    margin: 0 auto;
+    margin-top: -20px;
+
+  }
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    padding: 25px 15px;
+    background-color: #EF5C14;
+    margin: 30px 10px;
+    height: 280px;
+    text-align: left;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
+  }
+  
+  .top {
+    border-radius: 25px 25px 0 0;
+    height: 100px;
+    width: 100%;
+    background-color: #FFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+  }
+  
+  .name {
+    font-size: 2em;
+    text-align: center;
+    flex: 1;
+    margin:auto;
+    border: 2px dotted #b10054;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 4px;
+  }
+
+  .name-info {
+    font-weight: 400;
+    font-size:24px;
+    color:#b10054;
+    border-left: 3px solid #FFFF;
+    padding:4px;
+  }
+
+  .linkedin-icon {
+    background: linear-gradient(#EF5C14, #b10054);
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 20px;
+    margin:0 10px;
+  }
+  
+  .card img {
+    margin: 30px 20px 0 0;
+  }
+  
+  .circle-img {
+    border-radius: 50%;
+    border: 7px solid #fff;
+    width: 120px;
+    height: 120px;
+  }
+  
+  .bottom {
+    margin-top: 60px;
+  }
+  
+  .info {
+    margin: 20px 0;
+    color: #FFFF;
+  }
+
+  .role {
+    color:#FFFF;
+    margin: 20px 0;
+    font-weight: 400;
+    font-size:x-large;
+    border-bottom:2px solid #b10054;
+    width: fit-content;
+  }
+
+  /* Stage1 profile selection */
+  .radio-label {
+    cursor: pointer;
+    text-align: center;
+}
+
+.radio-label img {
+    width: 100px; 
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.radio-label input {
+    display: none; 
+}
+
+.radio-label input:checked + img {
+    transform: scale(1.1); 
+    border: 3px solid #EF5C14; 
+}
+
+.avatar-selection {
+    width: 60%; 
+    margin: 0 auto; 
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}
+
+.button-group::before,
+.button-group::after {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    width: 100%; 
+    height: 2px; 
+    background-color: #EF5C14; 
+    z-index: -1; 
+}
+
+.button-group::before {
+    left: 0; 
+    right: 50%; 
+}
+
+.button-group::after {
+    right: 0; 
+}
+
+.btn-circle {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #EF5C14; 
+    background-color: #FFFFFF; 
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+.btn-circle:hover {
+    background-color: #EF5C14; 
+    color: white; 
+    border-color: #EF5C14; 
+}
+
+.btn-circle.active {
+    background-color: #EF5C14; 
+    color: white;
+    border: 2px solid #EF5C14;
+}
+
+div .input-group {
+    width: 50%;
+}
+
+.startgame-button {
+    background-color: #EF5C14;
+    border-color: #EF5C14;
+    color: white;
+}
+
+.startgame-button:hover {
+    background-color: #EF5C14; 
+    color: white; 
+    border-color: #EF5C14; 
+}
+
 
 /* Media Queries */
 
@@ -346,6 +652,41 @@ ul .black-key-nav {
     .btn {
         padding: 8px 16px;  /* Adjusted button padding */
     }
+}
+
+/* Instructions */
+.inst-body div {
+    font-size: larger;
+}
+.inst-step1-img1 {
+    width: 30vw;
+    height: auto;
+    min-width: 350px;
+}
+.inst-step1-img2 {
+    width: 9vw;
+    min-width: 100px;
+}
+.inst-step2-img1 {
+    width: 40vw;
+    min-width: 350px;
+}
+.inst-step3-img1 {
+    width: 40vw;
+    min-width: 350px;
+}
+
+/* Footer */
+
+#spacer {
+    height: 129px;
+    width: 100vw;
+}
+
+.footer-container {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
 }
 
 /* Small devices (phones, 576px and below) */
@@ -417,5 +758,62 @@ ul .black-key-nav {
     .NavLink {
         padding: 3px 8px;  /* Adjusted link padding for small screens */
         font-size: 12px;  /* Reduced link font size for small screens */
+    }
+}
+
+/* Small devices in landscape form */
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    .logo {
+        width: 40px;  /* Further reduced size for small screens */
+        height: 40px;  /* Further reduced size for small screens */
+    }
+    nav {
+        padding: 0;
+        margin: 0;
+        max-height: fit-content;
+    }
+   
+    .NavBar {
+        padding: 0;
+    }
+
+    .landing-page {
+        max-width: 300px;
+        margin-top: 5px;  /* Adjusted for small screens */
+        padding: 5px;  /* Reduced padding */
+    }
+
+    /* Footer */
+    .footer-container {
+    border-top: 1px #D8B646 solid !important;
+    text-align: center;
+    background-color: #f8f9fa;
+    }
+
+    .social-networks {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    }
+
+    .social-networks i {
+    font-size: 100%;
+    padding: 0;
+    color: #0a0a0a;
+    transition: color 0.3s ease;
+    }
+
+    .social-networks i:hover {
+    color: #b10054;
+    }
+
+    .p.mt-3 {
+    margin:0;
+    padding: 0;
+    }
+
+    .footer-container {
+    margin:0;
+    padding: 0;
     }
 }

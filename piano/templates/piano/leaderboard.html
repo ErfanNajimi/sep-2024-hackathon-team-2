@@ -2,7 +2,19 @@
 {% load static %}
 
 {% block content %}
-<p>hi + {{ scores }}</p>
+{% if user.is_authenticated %}
+<br>
+<div class="text-center">
+    <h1>Your total score is currently: {{ score }}</h1>
+</div>
+<br>
+{% else %}
+<br>
+<div class="text-center">
+    <h1>Login to view your total score!</h1>
+</div>
+<br>
+{% endif %}
 <!-- Add HTML Here -->
  <div class="row">
         <div class="col d-flex justify-content-center">

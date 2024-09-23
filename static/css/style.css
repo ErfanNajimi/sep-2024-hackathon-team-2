@@ -417,7 +417,7 @@ ul .black-key-nav {
     padding: 25px 15px;
     background-color: #EF5C14;
     margin: 30px 10px;
-    height: 260px;
+    height: 280px;
     text-align: left;
   }
 
@@ -446,6 +446,14 @@ ul .black-key-nav {
     border-radius: 10px;
     height: fit-content;
     padding: 4px;
+  }
+
+  .name-info {
+    font-weight: 400;
+    font-size:24px;
+    color:#b10054;
+    border-left: 3px solid #FFFF;
+    padding:4px;
   }
 
   .linkedin-icon {
@@ -646,6 +654,41 @@ div .input-group {
     }
 }
 
+/* Instructions */
+.inst-body div {
+    font-size: larger;
+}
+.inst-step1-img1 {
+    width: 30vw;
+    height: auto;
+    min-width: 350px;
+}
+.inst-step1-img2 {
+    width: 9vw;
+    min-width: 100px;
+}
+.inst-step2-img1 {
+    width: 40vw;
+    min-width: 350px;
+}
+.inst-step3-img1 {
+    width: 40vw;
+    min-width: 350px;
+}
+
+/* Footer */
+
+#spacer {
+    height: 129px;
+    width: 100vw;
+}
+
+.footer-container {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+}
+
 /* Small devices (phones, 576px and below) */
 @media (max-width: 576px) {
     #keyboard {
@@ -743,7 +786,6 @@ div .input-group {
     /* Footer */
     .footer-container {
     border-top: 1px #D8B646 solid !important;
-    padding: 0;
     text-align: center;
     background-color: #f8f9fa;
     }

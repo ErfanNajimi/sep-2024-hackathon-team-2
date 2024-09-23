@@ -211,7 +211,7 @@ function calculateScore(timeSpent, numberOfResets, correctTune, keysPlayed) {
 calculateScore(stopTime, numberOfResets, correctTune, keysPlayed);
 document.getElementById('review').addEventListener('click', () => {
     const score = calculateScore(stopTime, numberOfResets, correctTune, keysPlayed);
-    document.getElementById('tune-name').innerText = 'Tune: Frère Jacques';
+    document.getElementById('tune-name').innerText = 'Result';
     document.getElementById('time-spent').innerText = `Time: ${stopTime}`;
     document.getElementById('number-of-resets').innerText = `Resets: ${numberOfResets}`;
     document.getElementById('scored').innerText = `You scored: ${score}`;
