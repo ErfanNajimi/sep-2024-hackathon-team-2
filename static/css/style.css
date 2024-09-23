@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&family=Open+Sans:wght@300;500&family=Playfair+Display:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+:root{
+    --music-sheet-height:100px;
+}
+
 /* Global Styles */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -76,6 +80,11 @@ body {
     max-width: 600px;
     min-width: 400px;
     margin-top: 10%;
+}
+
+.landing-page:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
 }
 
 /* Piano */
@@ -159,6 +168,7 @@ body {
 
 #record,
 #pause,
+#stop,
 #reset {
     font-size: 200%;
     color: white;
@@ -167,6 +177,7 @@ body {
 
 #record:hover,
 #pause:hover,
+#stop:hover,
 #reset:hover {
     color: #b10054;
 }
@@ -178,24 +189,72 @@ body {
 
 /* Music Sheet */
 #music-sheet .row {
-    height: 100px;
+    height: var(--music-sheet-height);
     width: 50vw;;
     position: relative;
     border-left: 5px solid black;
-    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 #music-sheet .col {
     border-top: 2px solid black;
 }
 
-#note {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: orange;
-    position: absolute; 
-    left: 50px;
-    top: 100px;
+#music-sheet .sheet-col,
+#music-sheet svg,
+#music-sheet .col-1 {
+    max-height: 30px;
+}
+
+#music-sheet .h-line {
+    width: 100%;
+    height: 25%;
+    border-bottom: 2px solid black;
+}
+
+#music-sheet .note-c,
+#music-sheet .note-csharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 1 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-d,
+#music-sheet .note-dsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 2 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-e {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 3 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-f,
+#music-sheet .note-fsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 4 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-g,
+#music-sheet .note-gsharp {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 5 - (var(--music-sheet-height) /8));
+}
+
+
+#music-sheet .note-a,
+#music-sheet .note-asharp  {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 6 - (var(--music-sheet-height) /8));
+}
+
+#music-sheet .note-b {
+    position: relative;
+    bottom: calc((var(--music-sheet-height) / 8) * 7 - (var(--music-sheet-height) /8));
+}
+
+.treble-clef {
+    position: relative;
+    bottom: 100px;
 }
 
 /* Gameplay stages */
@@ -325,6 +384,9 @@ ul .black-key-nav {
     text-align: center;
     padding: 0;
     margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .social-networks li {
@@ -346,10 +408,7 @@ ul .black-key-nav {
 .card-container {
     margin: 0 auto;
     margin-top: -20px;
-    /* padding: 25px; */
-    /* max-width: 400px; */
-    /* min-width: 360px;  */
-    /* background-color: #dfe6e9;  */
+
   }
 
 .card {
@@ -358,9 +417,13 @@ ul .black-key-nav {
     padding: 25px 15px;
     background-color: #EF5C14;
     margin: 30px 10px;
-    height: 200px;
-    box-shadow: 0 2px 5px #ccc;
+    height: 260px;
     text-align: left;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px 6px rgba(27, 5, 5, 0.4);
   }
   
   .top {
@@ -378,10 +441,20 @@ ul .black-key-nav {
     font-size: 2em;
     text-align: center;
     flex: 1;
-    margin: 10% 20px 10px;
+    margin:auto;
     border: 2px dotted #b10054;
     border-radius: 10px;
+    height: fit-content;
+    padding: 4px;
+  }
 
+  .linkedin-icon {
+    background: linear-gradient(#EF5C14, #b10054);
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 20px;
+    margin:0 10px;
   }
   
   .card img {
@@ -403,6 +476,111 @@ ul .black-key-nav {
     margin: 20px 0;
     color: #FFFF;
   }
+
+  .role {
+    color:#FFFF;
+    margin: 20px 0;
+    font-weight: 400;
+    font-size:x-large;
+    border-bottom:2px solid #b10054;
+    width: fit-content;
+  }
+
+  /* Stage1 profile selection */
+  .radio-label {
+    cursor: pointer;
+    text-align: center;
+}
+
+.radio-label img {
+    width: 100px; 
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.radio-label input {
+    display: none; 
+}
+
+.radio-label input:checked + img {
+    transform: scale(1.1); 
+    border: 3px solid #EF5C14; 
+}
+
+.avatar-selection {
+    width: 60%; 
+    margin: 0 auto; 
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}
+
+.button-group::before,
+.button-group::after {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    width: 100%; 
+    height: 2px; 
+    background-color: #EF5C14; 
+    z-index: -1; 
+}
+
+.button-group::before {
+    left: 0; 
+    right: 50%; 
+}
+
+.button-group::after {
+    right: 0; 
+}
+
+.btn-circle {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #EF5C14; 
+    background-color: #FFFFFF; 
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+.btn-circle:hover {
+    background-color: #EF5C14; 
+    color: white; 
+    border-color: #EF5C14; 
+}
+
+.btn-circle.active {
+    background-color: #EF5C14; 
+    color: white;
+    border: 2px solid #EF5C14;
+}
+
+div .input-group {
+    width: 50%;
+}
+
+.startgame-button {
+    background-color: #EF5C14;
+    border-color: #EF5C14;
+    color: white;
+}
+
+.startgame-button:hover {
+    background-color: #EF5C14; 
+    color: white; 
+    border-color: #EF5C14; 
+}
+
 
 /* Media Queries */
 
@@ -537,5 +715,63 @@ ul .black-key-nav {
     .NavLink {
         padding: 3px 8px;  /* Adjusted link padding for small screens */
         font-size: 12px;  /* Reduced link font size for small screens */
+    }
+}
+
+/* Small devices in landscape form */
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    .logo {
+        width: 40px;  /* Further reduced size for small screens */
+        height: 40px;  /* Further reduced size for small screens */
+    }
+    nav {
+        padding: 0;
+        margin: 0;
+        max-height: fit-content;
+    }
+   
+    .NavBar {
+        padding: 0;
+    }
+
+    .landing-page {
+        max-width: 300px;
+        margin-top: 5px;  /* Adjusted for small screens */
+        padding: 5px;  /* Reduced padding */
+    }
+
+    /* Footer */
+    .footer-container {
+    border-top: 1px #D8B646 solid !important;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    }
+
+    .social-networks {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    }
+
+    .social-networks i {
+    font-size: 100%;
+    padding: 0;
+    color: #0a0a0a;
+    transition: color 0.3s ease;
+    }
+
+    .social-networks i:hover {
+    color: #b10054;
+    }
+
+    .p.mt-3 {
+    margin:0;
+    padding: 0;
+    }
+
+    .footer-container {
+    margin:0;
+    padding: 0;
     }
 }

@@ -5,13 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tunes - Piano Music Game</title>. 
+    <title>Tunes - Piano Music Game</title>
 
    <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-
-<link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
-
+   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon.ico' %}">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -110,7 +107,7 @@
     </main>
     {% endblock %}
 
-    <button id="mobile-nav" class="btn border border-2 position-absolute top-50 start-0 translate-middle-y" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <button id="mobile-nav" class="btn border border-2 position-absolute top-50 start-0 translate-middle-y d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <i class="fa-solid fa-circle-chevron-right"></i>
     </button>
 
@@ -140,7 +137,6 @@
                     </li>
                     <li class="key-nav"><div class="black-key-nav"></div>
                         <a class="nav-link d-flex align-items-center" href="{#}">
-                            <img src="{{ user.profile_image.url }}" alt="Profile Image" class="rounded-circle" height="30">
                             <span class="ms-2">{{ user.username }}</span>
                         </a>
                     </li>
