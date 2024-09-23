@@ -46,6 +46,7 @@ document.addEventListener('keydown', e => {
     if (keyIndex !== -1) {
         let note = keys[keyIndex];
         console.log(note);
+        keysPlayed.push(note);
         document.getElementById(`${note}-audio`).load();
         document.getElementById(`${note}-audio`).play();
 
@@ -129,10 +130,16 @@ document.getElementById('play-tune').addEventListener('click', () => {
 // GAMEPLAY
 
 // Timer
+let firstClick = true;
+
 function timer(play, pause, reset, clock) {
     let min = 0;
     let sec = 55;
     play.addEventListener('click', () => {
+        if (firstClick) {
+            keysPlayed = [];
+            firstClick = false;
+        };
         x = setInterval(function() {
                 let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
                 let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
@@ -151,6 +158,7 @@ function timer(play, pause, reset, clock) {
     });
     
     reset.addEventListener('click', () => {
+        keysPlayed = [];
         clearInterval(x);
         min = 0;
         sec = 0;
