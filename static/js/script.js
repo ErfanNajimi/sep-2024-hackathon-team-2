@@ -3,7 +3,7 @@
 const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
 let keysPlayed = [];
-// let computerTune = [];
+
 // TEST
 const correctTune = [
     "CDECCEDC",
@@ -78,20 +78,6 @@ document.addEventListener('keydown', e => {
     }
 });
 
-// function playTune(tune) {
-//     let index = 0;
-//     function playNote() {
-//         if (index < tune.length) {
-//             let note = tune[index];
-//             document.getElementById(`${note}-audio`).load();
-//             document.getElementById(`${note}-audio`).play();
-//             index++;
-//             setTimeout(playNote, 1000); 
-//         }
-//     }
-//     playNote();
-// }
-
 function playNoteSequence(sequence, delay = 500) {
     sequence.forEach((note, index) => {
         setTimeout(() => {
@@ -120,7 +106,6 @@ function playTune(tune) {
 document.getElementById('play-tune').addEventListener('click', () => {
     let delayBetweenTunes = 0;
     const currentTunes = tunesSet[clickCount % tunesSet.length];
-    console.log(currentTunes);
 
     // Loop through each tune and play them with some delay between each
     currentTunes.forEach((tune, index) => {
@@ -133,23 +118,6 @@ document.getElementById('play-tune').addEventListener('click', () => {
     });
     clickCount++;
 });
-// function generateTune(length = 5) {
-//     computerTune = [];
-//     for (let i = 0; i < length; i++) {
-//         const randomIndex = Math.floor(Math.random() * keys.length);
-//         computerTune.push(keys[randomIndex]);
-//     }
-// }
-
-
-
-
-// document.getElementById('play-tune').addEventListener('click', () => {
-//     generateTune();
-//     console.log(computerTune);
-//     playTune(computerTune);
-// });
-
 // GAMEPLAY
 
 // Timer
@@ -184,7 +152,6 @@ function timer(play, pause, stop, reset, clock) {
 
     stop.addEventListener('click', () => {
         stopTime = (min*60) + sec - 1;
-        console.log(stopTime);
         clearInterval(x);
         min = 0;
         sec = 0;
