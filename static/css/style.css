@@ -360,7 +360,7 @@ ul .black-key-nav {
     padding: 25px 15px;
     background-color: #EF5C14;
     margin: 30px 10px;
-    height: 260px;
+    height: 280px;
     text-align: left;
   }
 
@@ -389,6 +389,14 @@ ul .black-key-nav {
     border-radius: 10px;
     height: fit-content;
     padding: 4px;
+  }
+
+  .name-info {
+    font-weight: 400;
+    font-size:24px;
+    color:#b10054;
+    border-left: 3px solid #FFFF;
+    padding:4px;
   }
 
   .linkedin-icon {
