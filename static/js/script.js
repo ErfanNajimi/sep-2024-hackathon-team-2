@@ -253,3 +253,15 @@ document.getElementById('keyLabelSwitch').addEventListener('click', () => {
         }
     }
 });
+
+// Profile Selection clicks 
+// On click for level difficulty 
+function selectDifficulty(selectedButton) {
+    
+    const buttons = document.querySelectorAll('.button-group .btn');
+    buttons.forEach(button => button.classList.remove('active'));
+    
+    selectedButton.classList.add('active');
+}
+
+selectDifficulty(selectedButton);

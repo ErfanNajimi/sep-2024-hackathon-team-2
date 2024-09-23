@@ -5,101 +5,64 @@
 
 <!-- Add HTML Here -->
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
-    <h3>Choose Your Avatar!</h3>
+    <h3 class="m-4">Choose Your Avatar!</h3>
     <form>
-        <!-- <div class="row">
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="option1">
-                    <img src="image1.jpg" alt="Option 1">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="option2">
-                    <img src="image2.jpg" alt="Option 2">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="option3">
-                    <img src="image3.jpg" alt="Option 3">
-                </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="option4">
-                    <img src="image4.jpg" alt="Option 4">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="option5">
-                    <img src="image5.jpg" alt="Option 5">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="option6">
-                    <img src="image6.jpg" alt="Option 6">
-                </label>
-            </div>
-        </div> -->
-        <div class="row">
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="mozart">
-                    <img src="../../../static/images/avatars/avatar1.webp" alt="Mozart">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="bach">
-                    <img src="../../../static/images/avatars/avatar2.webp" alt="Bach">
-                </label>
+        <div class="avatar-selection">
+            <div class="row mb-4">
+                <div class="col-6 col-md-4 text-center mb-2">
+                    <label class="radio-label">
+                        <input type="radio" name="options" value="mozart">
+                        <img src="../../../static/images/avatars/avatar1.webp" alt="Mozart">
+                    </label>
+                </div>
+                <div class="col-6 col-md-4 text-center">
+                    <label class="radio-label">
+                        <input type="radio" name="options" value="bach">
+                        <img src="../../../static/images/avatars/avatar2.webp" alt="Bach">
+                    </label>
+                </div>
+                <div class="col-6 col-md-4 text-center mb-2">
+                    <label class="radio-label">
+                        <input type="radio" name="options" value="chopin">
+                        <img src="../../../static/images/avatars/avatar3.webp" alt="Chopin">
+                    </label>
+                </div>
+                <div class="col-6 col-md-4 text-center">
+                    <label class="radio-label">
+                        <input type="radio" name="options" value="tchaikovsky">
+                        <img src="../../../static/images/avatars/avatar4.webp" alt="Tchaikovsky">
+                    </label>
+                </div>
+                <div class="col-6 col-md-4 text-center">
+                    <label class="radio-label">
+                        <input type="radio" name="options" value="vivaldi">
+                        <img src="../../../static/images/avatars/avatar5.webp" alt="Vivaldi">
+                    </label>
+                </div>
+                <div class="col-6 col-md-4 text-center">
+                    <label class="radio-label">
+                        <input type="radio" name="options" value="beethoven">
+                        <img src="../../../static/images/avatars/avatar6.webp" alt="Beethoven">
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="chopin">
-                    <img src="../../../static/images/avatars/avatar3.webp" alt="Chopin">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="tchaikovsky">
-                    <img src="../../../static/images/avatars/avatar4.webp" alt="Tchaikovsky">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="vivaldi">
-                    <img src="../../../static/images/avatars/avatar5.webp" alt="Vivaldi">
-                </label>
-            </div>
-            <div class="col text-center">
-                <label class="radio-label">
-                    <input type="radio" name="options" value="beethoven">
-                    <img src="../../../static/images/avatars/avatar6.webp" alt="Beethoven">
-                </label>
-            </div>
-        </div>
-        <h3>Choose A Player Name...</h3>
-        <div class="input-group">
-            <input type="text" aria-label="Player Name" placeholder="name" class="form-control">
-        </div>
-        <h3>Choose Your Difficulty</h3>
 
-        <div class="button-group">
-            <button type="button" class="btn btn-circle">1</button>
-            <button type="button" class="btn btn-circle">2</button>
-            <button type="button" class="btn btn-circle">3</button>
+        <h4 class="mt-5 mb-2">Enter Player Name</h4>
+        <div class="input-group mb-3">
+            <input type="text" aria-label="Player Name" placeholder="Mozart#03" class="form-control">
         </div>
+
+        <h4 class="mt-5 mb-3">Select Difficulty</h4>
+        <div class="button-group d-flex justify-content-between mb-4 w-75">
+            <button type="button" class="btn btn-circle" onclick="selectDifficulty(this)">Easy</button>
+            <button type="button" class="btn btn-circle" onclick="selectDifficulty(this)">Medium</button>
+            <button type="button" class="btn btn-circle" onclick="selectDifficulty(this)">Hard</button>
+        </div>
+        <div class="d-flex justify-content-center"> 
+            <button type="button" class="startgame-button btn btn-lg mb-5 mt-3" onclick="startGame(this)">Start Game</button>
+        </div>  
     </form>
 </div>
-
 
 {% endblock %}
