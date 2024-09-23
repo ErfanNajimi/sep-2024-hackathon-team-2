@@ -4,48 +4,33 @@ const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const keyBindings = ['A', 'W', 'S', 'E', 'D', 'F', 'T', 'G', 'Y', 'H', 'U', 'J']; 
 let keysPlayed = [];
 // let computerTune = [];
+// TEST
+const correctTune = [
+    "CDECCEDC",
+    "EFGEFG",
+    "GAGFECGAGFEC",
+    "CGCCGC"
+];
+
 let clickCount = 0;
 
-// const tunes = [
-//     "CDECCEDC",
-//     "EFGEFG",
-//     "GAGFECGAGFEC",
-//     "CGCCGC"
-// ];
+// Retrieving tunes from database
+const tunesSetRaw = document.getElementById('tunes').innerText;
+// Hide data after retrieval 
+document.getElementById('tunes').innerText = '{{ tunes }}';
 
-const tunesSet = [
-    // First click tunes
-    [
-        "CDECCEDC",
-        "EFGEFG",
-        "GAGFECGAGFEC",
-        "CGCCGC"
-    ],
-    // Second click tunes
-    [
-        "EDCDEEE",  
-        "DDDEDC",   
-        "EDCDEEE",  
-        "DDEDC"
-    ],
-    // Third click tunes
-    [
-        "CCGGAAG",
-        "FFEEDDC",
-        "GGFFEED",
-        "GGFFEED",
-        "CCGGAAG",
-        "FFEEDDC"
-    ],
-    // Fourth click tunes
-    [
-        "EDC",
-        "EDC",
-        "CCCC",
-        "DDDD",
-        "EDC"
-    ]
-];
+// Processing raw string data
+let tunesSetProcessing = tunesSetRaw.replaceAll('[','');
+tunesSetProcessing = tunesSetProcessing.replaceAll(']','');
+tunesSetProcessing = tunesSetProcessing.replaceAll('"','');
+tunesSetProcessing = tunesSetProcessing.replaceAll(',','');
+tunesSetProcessing = tunesSetProcessing.split(" ");
+
+for (let i in tunesSetProcessing) {
+    tunesSetProcessing[i] = tunesSetProcessing[i].split("/");
+}
+
+const tunesSet = tunesSetProcessing
 
 for (let index in keys) {
     let element = document.getElementById(`${keys[index]}`);
@@ -168,10 +153,18 @@ document.getElementById('play-tune').addEventListener('click', () => {
 // GAMEPLAY
 
 // Timer
-function timer(play, pause, reset, clock) {
+let firstClick = true;
+let stopTime = 0;
+let numberOfResets = 0;
+
+function timer(play, pause, stop, reset, clock) {
     let min = 0;
-    let sec = 55;
+    let sec = 0;
     play.addEventListener('click', () => {
+        if (firstClick) {
+            keysPlayed = [];
+            firstClick = false;
+        };
         x = setInterval(function() {
                 let minDisplay = (min.toString().length > 1) ? min.toString() : '0' + min.toString();
                 let secDisplay = (sec.toString().length > 1) ? sec.toString() : '0' + sec.toString();;
@@ -188,8 +181,19 @@ function timer(play, pause, reset, clock) {
     pause.addEventListener('click', () => {
         clearInterval(x);
     });
+
+    stop.addEventListener('click', () => {
+        stopTime = (min*60) + sec - 1;
+        console.log(stopTime);
+        clearInterval(x);
+        min = 0;
+        sec = 0;
+    });
     
     reset.addEventListener('click', () => {
+        numberOfResets += 1;
+        stopTime = 0;
+        keysPlayed = [];
         clearInterval(x);
         min = 0;
         sec = 0;
@@ -203,15 +207,49 @@ function timer(play, pause, reset, clock) {
 timer(
     document.getElementById('record'), 
     document.getElementById('pause'), 
+    document.getElementById('stop'), 
     document.getElementById('reset'), 
     document.getElementById('clock'),
 );
 
-// Tracker
 
-// function tracker(status) {
+function calculateScore(timeSpent, numberOfResets, correctTune, keysPlayed) {
+    let score = 0;
 
-// }
+    let strComputer = "";
+    for (let i in correctTune) {
+        strComputer += correctTune[i];
+    };
+
+    let listComputer = strComputer.split("");
+    for (let i in listComputer) {
+        if (listComputer[i] == keysPlayed[i]) {
+            score += 10;
+        }
+    };
+
+    numberOfResets += 1;
+    score += Math.round(score / numberOfResets);
+    numberOfResets -= 1;
+
+    score -= Math.round(timeSpent / 10);
+
+    if (score > 0 && stopTime !== 0) {
+        return score;
+    } else {
+        return 0;
+    };
+}
+
+calculateScore(stopTime, numberOfResets, correctTune, keysPlayed);
+document.getElementById('review').addEventListener('click', () => {
+    const score = calculateScore(stopTime, numberOfResets, correctTune, keysPlayed);
+    document.getElementById('tune-name').innerText = 'Tune: Frère Jacques';
+    document.getElementById('time-spent').innerText = `Time: ${stopTime}`;
+    document.getElementById('number-of-resets').innerText = `Resets: ${numberOfResets}`;
+    document.getElementById('scored').innerText = `You scored: ${score}`;
+    document.getElementById('id_score').setAttribute('value', `${score}`);
+});
 
 // LEADERBOARD
 

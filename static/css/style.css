@@ -163,6 +163,7 @@ body {
 
 #record,
 #pause,
+#stop,
 #reset {
     font-size: 200%;
     color: white;
@@ -171,6 +172,7 @@ body {
 
 #record:hover,
 #pause:hover,
+#stop:hover,
 #reset:hover {
     color: #b10054;
 }
